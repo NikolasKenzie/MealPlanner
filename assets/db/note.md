@@ -1,0 +1,1 @@
+ini buat masukin data dummy nya pakek JSON kalo bisa
