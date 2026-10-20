@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AroundBite - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo">AroundBite<span>.</span></a>
+
+            <p class="menu-title">MENU</p>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link active">
+                    <img src="house.svg" alt="" class="nav-icon">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="meal-planner.html" class="nav-link">
+                    <img src="calendar-days.svg" alt="" class="nav-icon">
+                    <span>Meal Planner</span>
+                </a>
+
+                <a href="explore-food.html" class="nav-link">
+                    <img src="utensils.svg" alt="" class="nav-icon">
+                    <span>Explore Food</span>
+                </a>
+
+                <a href="budget.html" class="nav-link">
+                    <img src="wallet.svg" alt="" class="nav-icon">
+                    <span>Budget Tracker</span>
+                </a>
+
+                <a href="profile.html" class="nav-link">
+                    <img src="user-round.svg" alt="" class="nav-icon">
+                    <span>My Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note">
+                    <p class="note-title">A little reminder</p>
+                    <p>Eat well, live well.</p>
+                </div>
+
+                <a href="index.html" class="back-link">
+                    <img src="arrow-left.svg" alt="" class="nav-icon">
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Welcome -->
+            <header class="welcome">
+                <div class="welcome-text">
+                    <p class="eyebrow">YOUR DAILY OVERVIEW</p>
+                    <h1>Good food, better days! 🌿</h1>
+                    <p>
+                        Welcome to AroundBite. Plan your meals
+                        and make your food budget work for you.
+                    </p>
+                </div>
+
+                <a href="meal-planner.html" class="primary-button">
+                    Plan My Meals
+                </a>
+            </header>
+
+            <!-- Daily Budget -->
+            <section class="budget-card">
+                <div class="budget-header">
+                    <div>
+                        <p class="eyebrow">SPEND SMART</p>
+                        <h2>My Food Budget</h2>
+                        <p class="section-description">
+                            Set your daily budget before choosing your meals.
+                        </p>
+                    </div>
+
+                    <div class="budget-icon">
+                        <img src="wallet.svg" alt="">
+                    </div>
+                </div>
+
+                <form id="budget-form" class="budget-form">
+                    <div class="input-group">
+                        <label for="daily-budget">Daily budget</label>
+
+                        <div class="budget-input">
+                            <span>Rp</span>
+                            <input
+                                type="number"
+                                id="daily-budget"
+                                placeholder="30000"
+                                min="1"
+                                step="1"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Set Budget
+                    </button>
+                </form>
+
+                <p id="budget-result" class="budget-result" aria-live="polite">
+                    Your daily budget summary will appear here.
+                </p>
+            </section>
+
+            <!-- Meal Plan -->
+            <section class="content-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">PLAN YOUR DAY</p>
+                        <h2>Today's Meal Plan</h2>
+                        <p class="section-description">
+                            Make time for a good meal, one step at a time.
+                        </p>
+                    </div>
+
+                    <a href="meal-planner.html" class="text-link">
+                        View planner →
+                    </a>
+                </div>
+
+                <div class="meal-container">
+
+                    <article class="meal-card breakfast">
+                        <p class="meal-number">01</p>
+                        <p class="meal-time">START YOUR DAY</p>
+                        <h3>Breakfast</h3>
+                        <p>What would you like to eat this morning?</p>
+                        <a href="meal-planner.html" class="meal-link">
+                            Plan breakfast →
+                        </a>
+                    </article>
+
+                    <article class="meal-card lunch">
+                        <p class="meal-number">02</p>
+                        <p class="meal-time">MIDDAY BREAK</p>
+                        <h3>Lunch</h3>
+                        <p>Find a meal for your lunch break.</p>
+                        <a href="meal-planner.html" class="meal-link">
+                            Plan lunch →
+                        </a>
+                    </article>
+
+                    <article class="meal-card dinner">
+                        <p class="meal-number">03</p>
+                        <p class="meal-time">END YOUR DAY</p>
+                        <h3>Dinner</h3>
+                        <p>Choose something nice for dinner.</p>
+                        <a href="meal-planner.html" class="meal-link">
+                            Plan dinner →
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- Explore Food -->
+            <section class="content-section">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">GOOD FOOD, GOOD MOOD</p>
+                        <h2>Find Your Next Meal</h2>
+                    </div>
+                </div>
+
+                <div class="food-card">
+                    <div class="food-card-text">
+                        <h3>Not sure what to eat today?</h3>
+                        <p>
+                            Explore different food options and find
+                            something that fits your budget.
+                        </p>
+
+                        <a href="explore-food.html" class="primary-button">
+                            Explore Food
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>© 2026 AroundBite. Plan Better. Eat Smarter.</p>
+            </footer>
+
+        </main>
+    </div>
+
+    <!-- Budget Interaction -->
+    <script>
+        const budgetForm = document.getElementById("budget-form");
+        const budgetInput = document.getElementById("daily-budget");
+        const budgetResult = document.getElementById("budget-result");
+
+        budgetForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const budget = Number(budgetInput.value);
+
+            if (budget <= 0 || !Number.isFinite(budget)) {
+                budgetResult.textContent =
+                    "Please enter a valid budget greater than zero.";
+                return;
+            }
+
+            const formattedBudget = budget.toLocaleString("id-ID");
+
+            budgetResult.textContent =
+                "Your daily food budget is Rp " + formattedBudget + ".";
+        });
+    </script>
+
+</body>
+</html>

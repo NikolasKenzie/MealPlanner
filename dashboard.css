@@ -1,0 +1,522 @@
+
+/* General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f5f9f6;
+    color: #294b3b;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 245px;
+    min-width: 245px;
+    background-color: white;
+    border-right: 1px solid #e5eee7;
+    padding: 32px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    color: #315b43;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    margin-bottom: 42px;
+}
+
+.logo span {
+    color: #8bbf9c;
+}
+
+.menu-title {
+    color: #9aaca0;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #718277;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-link:hover {
+    background-color: #f1f7f2;
+    color: #315b43;
+}
+
+.nav-link.active {
+    background-color: #e7f3e9;
+    color: #315b43;
+    font-weight: bold;
+}
+
+.nav-icon {
+    width: 19px;
+    height: 19px;
+    object-fit: contain;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding-top: 35px;
+}
+
+.sidebar-note {
+    background-color: #f4f8f3;
+    border-radius: 12px;
+    padding: 17px;
+    margin-bottom: 22px;
+}
+
+.note-title {
+    color: #315b43;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.sidebar-note p:last-child {
+    color: #829287;
+    font-size: 12px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #718277;
+    font-size: 13px;
+    padding: 8px 4px;
+}
+
+.back-link:hover {
+    color: #315b43;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 38px 42px;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.eyebrow {
+    color: #7aa889;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+.welcome h1 {
+    color: #294b3b;
+    font-size: 30px;
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.welcome-text > p:last-child {
+    color: #849389;
+    max-width: 480px;
+}
+
+.primary-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 9px;
+    background-color: #477c59;
+    color: white;
+    padding: 12px 19px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-button:hover {
+    background-color: #356646;
+}
+
+/* Budget Card */
+.budget-card {
+    background-color: white;
+    border: 1px solid #e5eee7;
+    border-radius: 16px;
+    padding: 26px;
+    margin-bottom: 36px;
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.budget-header h2,
+.section-heading h2 {
+    color: #294b3b;
+    font-size: 21px;
+    margin-bottom: 5px;
+}
+
+.section-description {
+    color: #89968c;
+    font-size: 13px;
+}
+
+.budget-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    background-color: #edf6ee;
+    border-radius: 12px;
+}
+
+.budget-icon img {
+    width: 22px;
+    height: 22px;
+}
+
+.budget-form {
+    display: flex;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.input-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.input-group label {
+    display: block;
+    color: #536b5b;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.budget-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #dce8de;
+    border-radius: 9px;
+    padding: 0 13px;
+    background-color: #fcfefc;
+}
+
+.budget-input:focus-within {
+    border-color: #7eaf8b;
+}
+
+.budget-input span {
+    color: #6e8976;
+    font-weight: bold;
+}
+
+.budget-input input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #294b3b;
+    padding: 12px 0;
+}
+
+.budget-result {
+    color: #477c59;
+    background-color: #f3f8f3;
+    border-radius: 8px;
+    padding: 11px 14px;
+    margin-top: 18px;
+    font-size: 12px;
+}
+
+/* Sections */
+.content-section {
+    margin-bottom: 36px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 19px;
+}
+
+.text-link {
+    color: #477c59;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.text-link:hover,
+.meal-link:hover {
+    color: #294b3b;
+}
+
+/* Meal Cards */
+.meal-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.meal-card {
+    position: relative;
+    background-color: white;
+    border: 1px solid #e5eee7;
+    border-radius: 14px;
+    padding: 22px 19px;
+    overflow: hidden;
+}
+
+.breakfast {
+    border-top: 3px solid #b9d9b7;
+}
+
+.lunch {
+    border-top: 3px solid #d5e5bd;
+}
+
+.dinner {
+    border-top: 3px solid #c5d9d0;
+}
+
+.meal-number {
+    color: #b4c9b8;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.meal-time {
+    color: #8aa492;
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.meal-card h3 {
+    color: #315b43;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.meal-card > p:not(.meal-number):not(.meal-time) {
+    color: #87958a;
+    font-size: 12px;
+    min-height: 40px;
+    margin-bottom: 17px;
+}
+
+.meal-link {
+    color: #477c59;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Explore Food */
+.food-card {
+    background-color: #edf5ed;
+    border: 1px solid #e0ece1;
+    border-radius: 15px;
+    padding: 28px;
+}
+
+.food-card-text h3 {
+    color: #315b43;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.food-card-text p {
+    color: #74877a;
+    font-size: 13px;
+    max-width: 470px;
+    margin-bottom: 19px;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #e5eee7;
+    padding-top: 20px;
+    margin-top: 42px;
+}
+
+footer p {
+    color: #9aa89d;
+    font-size: 11px;
+    text-align: center;
+}
+
+/* Responsive Layout */
+@media (max-width: 1000px) {
+    .sidebar {
+        width: 210px;
+        min-width: 210px;
+        padding: 28px 16px;
+    }
+
+    .main-content {
+        padding: 30px 24px;
+    }
+
+    .meal-container {
+        gap: 12px;
+    }
+
+    .meal-card {
+        padding: 19px 14px;
+    }
+}
+
+@media (max-width: 750px) {
+    .dashboard {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        padding: 18px 20px;
+        border-right: none;
+        border-bottom: 1px solid #e5eee7;
+    }
+
+    .logo {
+        margin-bottom: 16px;
+    }
+
+    .menu-title,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .nav-link {
+        gap: 7px;
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .nav-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .main-content {
+        padding: 26px 20px;
+    }
+
+    .welcome {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+
+    .meal-container {
+        grid-template-columns: 1fr;
+    }
+
+    .meal-card > p:not(.meal-number):not(.meal-time) {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .main-content {
+        padding: 22px 15px;
+    }
+
+    .budget-card {
+        padding: 19px;
+    }
+
+    .budget-form {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .budget-form .primary-button {
+        width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+    }
+
+    .section-heading h2,
+    .budget-header h2 {
+        font-size: 19px;
+    }
+
+    .food-card {
+        padding: 22px;
+    }
+}
