@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AroundBite - My Profile</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/profile.css">
+</head>
+<body>
+
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <a href="index.html" class="logo">AroundBite<span>.</span></a>
+
+            <p class="menu-title">MENU</p>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-link">
+                    <img src="assets/images/house.svg" alt="" class="nav-icon">
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="meal-planner.html" class="nav-link">
+                    <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
+                    <span>Meal Planner  </span>
+                </a>
+
+                <a href="exploreFood.html" class="nav-link">
+                    <img src="assets/images/utensils.svg" alt="" class="nav-icon">
+                    <span>Explore Food</span>
+                </a>
+
+                <a href="budget.html" class="nav-link">
+                    <img src="assets/images/wallet.svg" alt="" class="nav-icon">
+                    <span>Budget Tracker</span>
+                </a>
+
+                <a href="profile.html" class="nav-link active">
+                    <img src="assets/images/user-round.svg" alt="" class="nav-icon">
+                    <span>My Profile</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note">
+                    <p class="note-title">A little reminder</p>
+                    <p>Eat well, live well.</p>
+                </div>
+
+                <a href="index.html" class="back-link">
+                    <img src="assets/images/undo-2.svg" alt="" class="nav-icon">
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="welcome">
+                <div class="welcome-text">
+                    <p class="eyebrow">USER ACCOUNT</p>
+                    <h1>My Profile</h1>
+                    <p>Manage your account information and culinary preferences here.</p>
+                </div>
+                <button id="toggle-edit-btn" class="primary-button">
+                    Edit Profile
+                </button>
+            </div>
+
+            <div class="profile-card">
+                <!-- Avatar Section -->
+                <div class="profile-header">
+                    <div class="avatar-container">
+                        <img src="assets/images/user-round.svg" alt="Profile Picture" id="avatar-img">
+                    </div>
+                    <div class="profile-title">
+                        <h2 id="display-username">Username</h2>
+                        <p id="display-role"> AroundBite user</p>
+                    </div>
+                </div>
+
+                <!-- Profile Data List -->
+                <div class="profile-details" id="profile-details-container">
+                    <!-- Data profile akan dirender secara dinamis lewat JS -->
+                </div>
+
+                <!-- Form Tambah Field Baru (Muncul hanya saat Edit Mode) -->
+                <div id="add-field-container" class="add-field-container hidden">
+                    <hr class="divider">
+                    <p class="add-field-title">Tambah Informasi Baru</p>
+                    <div class="add-field-inputs">
+                        <input type="text" id="new-label-input" placeholder="Label (misal: Alamat, Bio, dll)">
+                        <input type="text" id="new-value-input" placeholder="Isi data">
+                        <button type="button" id="add-field-btn" class="secondary-button-sm">+ Tambah Data</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Script Logika Profile -->
+    <script>
+        // Data Profile Awal (Bisa dengan mudah kamu tambahkan item baru di sini)
+        let profileData = [
+            { id: "username", label: "Username", value: "Charlie", type: "text" },
+            { id: "email", label: "Email Address", value: "Charlie123e@example.com", type: "email" },
+            { id: "height", label: "height", value: "175cm", type: "text" },
+            { id: "weight", label: "weight", value: "67kg", type: "text" },
+            { id: "nomorTelp", label: "Nomor Telepon", value: "081234567890", type: "tel" }
+        ];
+
+        let isEditing = false;
+
+        const detailsContainer = document.getElementById("profile-details-container");
+        const toggleEditBtn = document.getElementById("toggle-edit-btn");
+        const addFieldContainer = document.getElementById("add-field-container");
+        const displayUsername = document.getElementById("display-username");
+
+        // Fungsi Render Data
+        function renderProfile() {
+            detailsContainer.innerHTML = "";
+
+            profileData.forEach((item, index) => {
+                const fieldDiv = document.createElement("div");
+                fieldDiv.className = "detail-item";
+
+                if (isEditing) {
+                    fieldDiv.innerHTML = `
+                        <label for="field-${index}">${item.label}</label>
+                        <div class="input-wrapper">
+                            <input type="${item.type || 'text'}" id="field-${index}" data-index="${index}" value="${item.value}">
+                            ${index >= 3 ? `<button class="delete-btn" onclick="deleteField(${index})">&times;</button>` : ''}
+                        </div>
+                    `;
+                } else {
+                    fieldDiv.innerHTML = `
+                        <span class="detail-label">${item.label}</span>
+                        <span class="detail-value">${item.value || '-'}</span>
+                    `;
+                }
+
+                detailsContainer.appendChild(fieldDiv);
+            });
+
+            // Update nama utama di header profile
+            const usernameObj = profileData.find(d => d.id === "username");
+            if (usernameObj) {
+                displayUsername.textContent = usernameObj.value || "User";
+            }
+        }
+
+        // Toggle Mode Edit
+        toggleEditBtn.addEventListener("click", () => {
+            if (isEditing) {
+                // Simpan perubahan dari input ke array data
+                profileData.forEach((item, index) => {
+                    const inputEl = document.getElementById(`field-${index}`);
+                    if (inputEl) {
+                        item.value = inputEl.value;
+                    }
+                });
+                isEditing = false;
+                toggleEditBtn.textContent = "Edit Profile";
+                addFieldContainer.classList.add("hidden");
+            } else {
+                isEditing = true;
+                toggleEditBtn.textContent = "Simpan Perubahan";
+                addFieldContainer.classList.remove("hidden");
+            }
+            renderProfile();
+        });
+
+        // Tambah Field Baru
+        document.getElementById("add-field-btn").addEventListener("click", () => {
+            const labelInput = document.getElementById("new-label-input");
+            const valueInput = document.getElementById("new-value-input");
+
+            if (!labelInput.value.trim()) {
+                alert("Silakan masukkan label untuk data baru.");
+                return;
+            }
+
+            profileData.push({
+                id: "custom_" + Date.now(),
+                label: labelInput.value.trim(),
+                value: valueInput.value.trim(),
+                type: "text"
+            });
+
+            labelInput.value = "";
+            valueInput.value = "";
+            renderProfile();
+        });
+
+        // Hapus Field Custom
+        function deleteField(index) {
+            profileData.splice(index, 1);
+            renderProfile();
+        }
+
+        // Render Pertama
+        renderProfile();
+    </script>
+</body>
+</html>
