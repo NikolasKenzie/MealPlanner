@@ -1,0 +1,645 @@
+[
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Soto Ayam",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Soto Ayam Nasi",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Ayam Bakar",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Uduk",
+    "harga": 9000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Kuning",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Ayam Penyet",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Ayam Serundeng",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Camilan",
+    "nama_makanan": "Gorengan",
+    "harga": 5000,
+    "satuan": "pcs"
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Teh Family",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Family Kantin",
+    "jenis": "Makanan",
+    "nama_makanan": "Ayam Geprek",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Siomay",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Batagor",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Dimsum",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Seblak",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Mi Jebew",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Ciremg Sambel Rujak",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Camilan",
+    "nama_makanan": "Jamur Enoki Crispy",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Minuman",
+    "nama_makanan": "Kopi Panas",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "A LIMA",
+    "jenis": "Minuman",
+    "nama_makanan": "Ice Kopi",
+    "harga": 6000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Gulai Ayam",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Sate Ayam",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Nasi Ayam Asam Manis",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Ayam Woku",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Nasi Tongkol Suwir",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Telur Dadar",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Bakso Urat / Jumbo",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Ayam Bakar",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Chicken Katsu",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Soto Kudus",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Nasi Campur",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Ayam Crispy Cabe Garam",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Goreng",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Ayam Rica Rica",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Ayam Presto Goreng",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Kantin Imanuel",
+    "jenis": "Makanan",
+    "nama_makanan": "Paket Sop Ayam",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Telur Crispy",
+    "harga": 13000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Kulit Ayam Crispy",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Kulit Cabe Ijo",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Ikan Lele Goreng",
+    "harga": 17000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Cumi Asam Cabe Ijo",
+    "harga": 17000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Hemat",
+    "nama_makanan": "Nasi Ayam Goreng Rempah",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Putih",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Goreng Ayam",
+    "harga": 16000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Goreng Kampung",
+    "harga": 17000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Goreng Sapi",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Goreng Seafood",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Nasi",
+    "nama_makanan": "Nasi Goreng Spc Ping An",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Asam Pedas",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Asam Manis",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Cabe Garam",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Lada Hitam",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Goreng Mentega",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Katsu",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Sambal Geprek",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Saus Padang",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Ayam",
+    "nama_makanan": "Nasi Ayam Rica Rica",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Cumi / Udang",
+    "nama_makanan": "Nasi Cumi/Udang Rica Rica",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Cumi / Udang",
+    "nama_makanan": "Nasi Cumi/Udang Asam Manis",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Cumi / Udang",
+    "nama_makanan": "Nasi Cumi/Udang Goreng Mentega",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Cumi / Udang",
+    "nama_makanan": "Nasi Cumi/Udang Saus Padang",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Paket Nasi Cumi / Udang",
+    "nama_makanan": "Nasi Cumi/Udang Lada Hitam",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Mie Goreng Ayam",
+    "harga": 16000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Bihun Goreng Ayam",
+    "harga": 16000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Kwetiaw Goreng Ayam",
+    "harga": 16000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Mie Goreng Sapi",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Bihun Goreng Sapi",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Kwetiaw Goreng Sapi",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Mie Goreng Seafood",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Bihun Goreng Seafood",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Kwetiaw Goreng Seafood",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Mie Goreng Spc Ping An",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Bihun Goreng Spc Ping An",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Mie / Bihun / Kwetiaw",
+    "nama_makanan": "Kwetiaw Goreng Spc Ping An",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Tahu Cabe Garam",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Telur Crispy",
+    "harga": 8000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Kulit Crispy",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Kulit Sapi Cabe Ijo",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Ikan Lele Goreng",
+    "harga": 11000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Cumi Asam Cabe Ijo",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Ayam Goreng Rempah",
+    "harga": 13000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Tahu Goreng",
+    "harga": 2000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Tempe Goreng",
+    "harga": 2000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Tambahan Topping / Tanpa Nasi",
+    "nama_makanan": "Telur Dadar/Oplat",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Lainnya",
+    "nama_makanan": "Indomie Goreng + Telur + Sayur",
+    "harga": 13000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Lainnya",
+    "nama_makanan": "Baso Kuah",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Jus Jeruk",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Jeruk Murni",
+    "harga": 10000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Teh Manis Jumbo",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Kopi Kapal Api Panas",
+    "harga": 4000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Air Mineral",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Nutrisari",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Waroenk Ping An",
+    "jenis": "Minuman",
+    "nama_makanan": "Es Kopi Kapal Api Hitam",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Bakar Ayam Suwir",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Nasi Bakar Cumi",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Mie Yamin Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Mie Yamin Bakso",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Mie Ayam Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Mie Ayam Bakso",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Kwetiaw Ayam Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Kwetiaw Ayam Bakso",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Bihun Ayam Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Bihun Ayam Bakso",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Gado-Gado Lontong",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Lontong Sayur",
+    "harga": 13000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Pangsit Kuah",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Ketoprak Telor Dadar",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Roemah_Radang",
+    "jenis": "Makanan",
+    "nama_makanan": "Mie Nyemek",
+    "harga": 15000
+  }
+]
