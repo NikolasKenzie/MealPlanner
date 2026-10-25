@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AroundBite - Budget Tracker</title>
+    <link rel="stylesheet" href="styles/budget.css">
+
+    <style>
+        .budget-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .budget-buttons button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .budget-buttons .primary-button {
+            border: none;
+        }
+
+        .reset-button {
+            background: white;
+            color: #064e3b;
+            border: 1px solid #059669;
+        }
+
+        .reset-button:hover {
+            background: #d1fae5;
+        }
+
+        .reset-button:active,
+        .primary-button:active {
+            transform: scale(0.98);
+        }
+
+        .budget-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .budget-input input {
+            flex: 1;
+            min-width: 0;
+        }
+
+        @media (max-width: 480px) {
+            .budget-buttons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="dashboard">
+
+    <aside class="sidebar">
+        <a href="index.html" class="logo">AroundBite<span>.</span></a>
+        <p class="menu-title">MENU</p>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-link">
+                <img src="assets/images/house.svg" alt="" class="nav-icon">
+                <span>Dashboard</span>
+            </a>
+            <a href="mealPlanner.html" class="nav-link">
+                <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
+                <span>Meal Planner</span>
+            </a>
+            <a href="exploreFood.html" class="nav-link">
+                <img src="assets/images/utensils.svg" alt="" class="nav-icon">
+                <span>Explore Food</span>
+            </a>
+            <a href="budget.html" class="nav-link active">
+                <img src="assets/images/wallet.svg" alt="" class="nav-icon">
+                <span>Budget Tracker</span>
+            </a>
+            <a href="profile.html" class="nav-link">
+                <img src="assets/images/user-round.svg" alt="" class="nav-icon">
+                <span>My Profile</span>
+            </a>
+
+             <a href="bmi.html" class="nav-link">
+                <img src="assets/images/calculator.svg" alt="" class="nav-icon">
+                <span>BMI Calculator</span>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-note">
+                <p class="note-title">A little reminder</p>
+                <p>Eat well, live well.</p>
+            </div>
+            <a href="index.html" class="back-link">
+                <img src="assets/images/undo-2.svg" alt="" class="nav-icon">
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">MANAGE YOUR MONEY</p>
+                <h1>Budget Tracker 💰</h1>
+                <p class="description">
+                    Keep track of your food expenses and spend wisely.
+                </p>
+            </div>
+        </header>
+
+        <section class="budget-setup">
+            <div>
+                <p class="eyebrow">YOUR MONTHLY PLAN</p>
+                <h2>Monthly Food Budget</h2>
+                <p class="description">
+                    Set a budget to manage your food spending this month.
+                </p>
+            </div>
+
+            <form id="budget-form">
+                <label for="monthly-budget">Budget amount (Rp)</label>
+
+                <div class="budget-input">
+                    <span>Rp</span>
+                    <input type="number" id="monthly-budget"
+                        placeholder="80000" min="1" required>
+                </div>
+
+                <div class="budget-buttons">
+                    <button type="submit" class="primary-button">
+                        Save Budget
+                    </button>
+                    <button type="button" id="reset-budget"
+                        class="reset-button">
+                        Reset
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <div class="summary-icon green">💵</div>
+                <p>Monthly Budget</p>
+                <h2 id="budget-total">Rp 0</h2>
+                <span>Your spending limit</span>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-icon orange">🛒</div>
+                <p>Total Spent</p>
+                <h2 id="total-spent">Rp 0</h2>
+                <span>Your recorded expenses</span>
+            </article>
+
+            <article class="summary-card">
+                <div class="summary-icon light-green">🌱</div>
+                <p>Remaining Balance</p>
+                <h2 id="remaining-balance">Rp 0</h2>
+                <span id="balance-message">Money left to spend</span>
+            </article>
+        </section>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Budget Overview</h2>
+                    <p class="description">
+                        See how much of your budget you have used.
+                    </p>
+                </div>
+                <span id="budget-percentage">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="budget-progress" class="progress-fill"></div>
+            </div>
+
+            <p id="progress-message" class="progress-message">
+                Set your budget and start tracking your expenses.
+            </p>
+        </section>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Add New Expense</h2>
+                    <p class="description">Record the food you buy each day.</p>
+                </div>
+            </div>
+
+            <form id="expense-form" class="expense-form">
+                <div class="form-group">
+                    <label for="expense-name">Expense Name</label>
+                    <input type="text" id="expense-name"
+                        placeholder="e.g. Chicken rice" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expense-category">Category</label>
+                    <select id="expense-category" required>
+                        <option value="Food">Food</option>
+                        <option value="Drinks">Drinks</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="expense-amount">Price (Rp)</label>
+                    <input type="number" id="expense-amount"
+                        placeholder="15000" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="expense-date">Date</label>
+                    <input type="date" id="expense-date" required>
+                </div>
+
+                <button type="submit" class="primary-button add-button">
+                    + Add Expense
+                </button>
+            </form>
+        </section>
+
+        <section class="content-card">
+            <div class="section-heading">
+                <div>
+                    <h2>Expense History</h2>
+                    <p class="description">Review your recorded food expenses.</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Expense</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-list"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 AroundBite. Plan Better. Eat Smarter.</p>
+        </footer>
+
+    </main>
+</div>
+
+<script>
+    const budgetForm = document.getElementById("budget-form");
+    const budgetInput = document.getElementById("monthly-budget");
+    const resetButton = document.getElementById("reset-budget");
+    const expenseForm = document.getElementById("expense-form");
+    const expenseList = document.getElementById("expense-list");
+
+    let monthlyBudget =
+        Number(localStorage.getItem("aroundbite-budget")) || 0;
+
+    let expenses = JSON.parse(
+        localStorage.getItem("aroundbite-expenses") || "[]"
+    );
+
+    function formatRupiah(amount) {
+        return "Rp " + amount.toLocaleString("id-ID");
+    }
+
+    function updateBudget() {
+        const totalSpent = expenses.reduce(function(total, expense) {
+            return total + Number(expense.amount);
+        }, 0);
+
+        const remaining = monthlyBudget - totalSpent;
+        const percentage = monthlyBudget > 0
+            ? (totalSpent / monthlyBudget) * 100
+            : 0;
+
+        document.getElementById("budget-total").textContent =
+            formatRupiah(monthlyBudget);
+
+        document.getElementById("total-spent").textContent =
+            formatRupiah(totalSpent);
+
+        document.getElementById("remaining-balance").textContent =
+            formatRupiah(remaining);
+
+        document.getElementById("balance-message").textContent =
+            remaining < 0 ? "You are over budget!" : "Money left to spend";
+
+        document.getElementById("budget-percentage").textContent =
+            Math.round(percentage) + "%";
+
+        document.getElementById("budget-progress").style.width =
+            Math.min(percentage, 100) + "%";
+
+        document.getElementById("progress-message").textContent =
+            monthlyBudget === 0
+                ? "Set your budget and start tracking your expenses."
+                : percentage > 100
+                    ? "You have exceeded your monthly budget."
+                    : "You have used " + Math.round(percentage) +
+                      "% of your monthly budget.";
+
+        localStorage.setItem("aroundbite-budget", monthlyBudget);
+        localStorage.setItem(
+            "aroundbite-expenses", JSON.stringify(expenses)
+        );
+
+        renderExpenses();
+    }
+
+    function renderExpenses() {
+        expenseList.innerHTML = "";
+
+        if (expenses.length === 0) {
+            expenseList.innerHTML =
+                '<tr><td colspan="5" class="empty-message">' +
+                'No expenses yet. Add your first expense!</td></tr>';
+            return;
+        }
+
+        expenses.forEach(function(expense) {
+            const row = document.createElement("tr");
+
+            [expense.name, expense.category, expense.date].forEach(
+                function(value) {
+                    const cell = document.createElement("td");
+                    cell.textContent = value;
+                    row.appendChild(cell);
+                }
+            );
+
+            const amountCell = document.createElement("td");
+            amountCell.textContent = formatRupiah(Number(expense.amount));
+            row.appendChild(amountCell);
+
+            const actionCell = document.createElement("td");
+            const deleteButton = document.createElement("button");
+
+            deleteButton.type = "button";
+            deleteButton.textContent = "Delete";
+            deleteButton.className = "delete-button";
+
+            deleteButton.addEventListener("click", function() {
+                expenses = expenses.filter(function(item) {
+                    return item.id !== expense.id;
+                });
+                updateBudget();
+            });
+
+            actionCell.appendChild(deleteButton);
+            row.appendChild(actionCell);
+            expenseList.appendChild(row);
+        });
+    }
+
+    budgetForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const value = Number(budgetInput.value);
+
+        if (!Number.isFinite(value) || value <= 0) {
+            alert("Please enter a valid budget.");
+            return;
+        }
+
+        monthlyBudget = value;
+        updateBudget();
+    });
+
+    resetButton.addEventListener("click", function() {
+        monthlyBudget = 0;
+        budgetInput.value = "";
+        updateBudget();
+    });
+
+    expenseForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("expense-name").value.trim();
+        const category = document.getElementById("expense-category").value;
+        const amount = Number(
+            document.getElementById("expense-amount").value
+        );
+        const date = document.getElementById("expense-date").value;
+
+        if (!name || !date || !Number.isFinite(amount) || amount <= 0) {
+            alert("Please complete all fields correctly.");
+            return;
+        }
+
+        expenses.unshift({
+            id: Date.now() + Math.random(),
+            name: name,
+            category: category,
+            amount: amount,
+            date: date
+        });
+
+        updateBudget();
+        expenseForm.reset();
+        setTodayDate();
+    });
+
+    function setTodayDate() {
+        const today = new Date();
+        const localDate = new Date(
+            today.getTime() - today.getTimezoneOffset() * 60000
+        ).toISOString().slice(0, 10);
+
+        document.getElementById("expense-date").value = localDate;
+    }
+
+    budgetInput.value = monthlyBudget || "";
+    setTodayDate();
+    updateBudget();
+</script>
+</body>
+</html>

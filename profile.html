@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +26,7 @@
 
                 <a href="mealPlanner.html" class="nav-link">
                     <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
-                    <span>Meal Planner  </span>
+                    <span>Meal Planner</span>
                 </a>
 
                 <a href="exploreFood.html" class="nav-link">
@@ -42,6 +43,11 @@
                     <img src="assets/images/user-round.svg" alt="" class="nav-icon">
                     <span>My Profile</span>
                 </a>
+
+                <a href="bmi.html" class="nav-link" aria-current="page">
+                  <img src="assets/images/calculator.svg" alt="" class="nav-icon">
+                <span>BMI Calculator</span>
+            </a>
             </nav>
 
             <div class="sidebar-bottom">
@@ -65,62 +71,99 @@
                     <h1>My Profile</h1>
                     <p>Manage your account information and culinary preferences here.</p>
                 </div>
-                <button id="toggle-edit-btn" class="primary-button">
+
+                <button type="button" id="toggle-edit-btn" class="primary-button">
                     Edit Profile
                 </button>
             </div>
 
             <div class="profile-card">
+
                 <!-- Avatar Section -->
                 <div class="profile-header">
                     <div class="avatar-container">
-                        <img src="assets/images/user-round.svg" alt="Profile Picture" id="avatar-img">
+                        <img src="assets/images/user-round.svg"
+                             alt="Profile Picture"
+                             id="avatar-img">
                     </div>
+
                     <div class="profile-title">
                         <h2 id="display-username">Username</h2>
-                        <p id="display-role"> AroundBite user</p>
+                        <p id="display-role">AroundBite user</p>
                     </div>
                 </div>
 
-                <!-- Profile Data List -->
+                <!-- Profile Data -->
                 <div class="profile-details" id="profile-details-container">
-                    <!-- Data profile akan dirender secara dinamis lewat JS -->
                 </div>
 
-                <!-- Form Tambah Field Baru (Muncul hanya saat Edit Mode) -->
+                <!-- Add New Field -->
                 <div id="add-field-container" class="add-field-container hidden">
                     <hr class="divider">
+
                     <p class="add-field-title">Tambah Informasi Baru</p>
+
                     <div class="add-field-inputs">
-                        <input type="text" id="new-label-input" placeholder="Label (misal: Alamat, Bio, dll)">
-                        <input type="text" id="new-value-input" placeholder="Isi data">
-                        <button type="button" id="add-field-btn" class="secondary-button-sm">+ Tambah Data</button>
+                        <input type="text" id="new-label-input"
+                               placeholder="Label (misal: Alamat, Bio, dll)">
+
+                        <input type="text" id="new-value-input"
+                               placeholder="Isi data">
+
+                        <button type="button" id="add-field-btn"
+                                class="secondary-button-sm">
+                            + Tambah Data
+                        </button>
                     </div>
                 </div>
+
             </div>
         </main>
-
     </div>
 
-    <!-- Script Logika Profile -->
+    <!-- JavaScript Profile -->
     <script>
-        // Data Profile Awal (Bisa dengan mudah kamu tambahkan item baru di sini)
-        let profileData = [
+        // Data profile awal
+        const defaultProfileData = [
             { id: "username", label: "Username", value: "Charlie", type: "text" },
             { id: "email", label: "Email Address", value: "Charlie123e@example.com", type: "email" },
-            { id: "height", label: "height", value: "175cm", type: "text" },
-            { id: "weight", label: "weight", value: "67kg", type: "text" },
+            { id: "height", label: "Height (cm)", value: "175", type: "number" },
+            { id: "weight", label: "Weight (kg)", value: "67", type: "number" },
             { id: "nomorTelp", label: "Nomor Telepon", value: "081234567890", type: "tel" }
         ];
 
+        let profileData = [...defaultProfileData];
         let isEditing = false;
 
         const detailsContainer = document.getElementById("profile-details-container");
         const toggleEditBtn = document.getElementById("toggle-edit-btn");
         const addFieldContainer = document.getElementById("add-field-container");
         const displayUsername = document.getElementById("display-username");
+        const labelInput = document.getElementById("new-label-input");
+        const valueInput = document.getElementById("new-value-input");
 
-        // Fungsi Render Data
+        // Load saved profile
+        function loadProfile() {
+            const savedProfile = localStorage.getItem("aroundbite-profile");
+
+            if (savedProfile) {
+                try {
+                    profileData = JSON.parse(savedProfile);
+                } catch (error) {
+                    profileData = [...defaultProfileData];
+                }
+            }
+        }
+
+        // Save profile to localStorage
+        function saveProfile() {
+            localStorage.setItem(
+                "aroundbite-profile",
+                JSON.stringify(profileData)
+            );
+        }
+
+        // Display profile data
         function renderProfile() {
             detailsContainer.innerHTML = "";
 
@@ -131,79 +174,107 @@
                 if (isEditing) {
                     fieldDiv.innerHTML = `
                         <label for="field-${index}">${item.label}</label>
+
                         <div class="input-wrapper">
-                            <input type="${item.type || 'text'}" id="field-${index}" data-index="${index}" value="${item.value}">
-                            ${index >= 3 ? `<button class="delete-btn" onclick="deleteField(${index})">&times;</button>` : ''}
+                            <input
+                                type="${item.type || "text"}"
+                                id="field-${index}"
+                                value="${item.value || ""}"
+                            >
+
+                            ${index >= 4
+                                ? `<button type="button"
+                                           class="delete-btn"
+                                           onclick="deleteField(${index})"
+                                           aria-label="Delete ${item.label}">
+                                       &times;
+                                   </button>`
+                                : ""}
                         </div>
                     `;
                 } else {
                     fieldDiv.innerHTML = `
                         <span class="detail-label">${item.label}</span>
-                        <span class="detail-value">${item.value || '-'}</span>
+                        <span class="detail-value">${item.value || "-"}</span>
                     `;
                 }
 
                 detailsContainer.appendChild(fieldDiv);
             });
 
-            // Update nama utama di header profile
-            const usernameObj = profileData.find(d => d.id === "username");
-            if (usernameObj) {
-                displayUsername.textContent = usernameObj.value || "User";
-            }
+            const usernameObj = profileData.find(
+                item => item.id === "username"
+            );
+
+            displayUsername.textContent =
+                usernameObj?.value || "User";
         }
 
-        // Toggle Mode Edit
-        toggleEditBtn.addEventListener("click", () => {
+        // Toggle edit and save
+        toggleEditBtn.addEventListener("click", function () {
             if (isEditing) {
-                // Simpan perubahan dari input ke array data
+                // Read input values before re-rendering
                 profileData.forEach((item, index) => {
-                    const inputEl = document.getElementById(`field-${index}`);
-                    if (inputEl) {
-                        item.value = inputEl.value;
+                    const input = document.getElementById(`field-${index}`);
+
+                    if (input) {
+                        item.value = input.value.trim();
                     }
                 });
+
+                saveProfile();
+
                 isEditing = false;
                 toggleEditBtn.textContent = "Edit Profile";
                 addFieldContainer.classList.add("hidden");
+
+                renderProfile();
+                alert("Profile berhasil disimpan!");
             } else {
                 isEditing = true;
                 toggleEditBtn.textContent = "Simpan Perubahan";
                 addFieldContainer.classList.remove("hidden");
+
+                renderProfile();
             }
-            renderProfile();
         });
 
-        // Tambah Field Baru
-        document.getElementById("add-field-btn").addEventListener("click", () => {
-            const labelInput = document.getElementById("new-label-input");
-            const valueInput = document.getElementById("new-value-input");
+        // Add new profile field
+        document.getElementById("add-field-btn").addEventListener("click", function () {
+            const label = labelInput.value.trim();
+            const value = valueInput.value.trim();
 
-            if (!labelInput.value.trim()) {
+            if (!label) {
                 alert("Silakan masukkan label untuk data baru.");
                 return;
             }
 
             profileData.push({
                 id: "custom_" + Date.now(),
-                label: labelInput.value.trim(),
-                value: valueInput.value.trim(),
+                label: label,
+                value: value,
                 type: "text"
             });
 
+            saveProfile();
+
             labelInput.value = "";
             valueInput.value = "";
+
             renderProfile();
         });
 
-        // Hapus Field Custom
+        // Delete a profile field
         function deleteField(index) {
             profileData.splice(index, 1);
+            saveProfile();
             renderProfile();
         }
 
-        // Render Pertama
+        // Load saved data when the page opens
+        loadProfile();
         renderProfile();
     </script>
+
 </body>
 </html>
