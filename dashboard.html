@@ -23,7 +23,7 @@
                     <span>Dashboard</span>
                 </a>
 
-                <a href="meal-planner.html" class="nav-link">
+                <a href="mealPlanner.html" class="nav-link">
                     <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
                     <span>Meal Planner</span>
                 </a>
@@ -71,7 +71,7 @@
                     </p>
                 </div>
 
-                <a href="meal-planner.html" class="primary-button">
+                <a href="mealPlanner.html" class="primary-button">
                     Plan My Meals
                 </a>
             </header>
@@ -94,15 +94,15 @@
 
                 <form id="budget-form" class="budget-form">
                     <div class="input-group">
-                        <label for="daily-budget">Daily budget</label>
+                        <label for="daily-budget">weekly budget</label>
 
                         <div class="budget-input">
                             <span>Rp</span>
                             <input
                                 type="number"
                                 id="daily-budget"
-                                placeholder="30000"
-                                min="1"
+                                placeholder="Enter your weekly budget"
+                                min="10000"
                                 step="1"
                                 required
                             >
@@ -130,7 +130,7 @@
                         </p>
                     </div>
 
-                    <a href="meal-planner.html" class="text-link">
+                    <a href="mealPlanner.html" class="text-link">
                         View planner →
                     </a>
                 </div>
@@ -142,7 +142,7 @@
                         <p class="meal-time">START YOUR DAY</p>
                         <h3>Breakfast</h3>
                         <p>What would you like to eat this morning?</p>
-                        <a href="meal-planner.html" class="meal-link">
+                        <a href="mealPlanner.html" class="meal-link">
                             Plan breakfast →
                         </a>
                     </article>
@@ -152,7 +152,7 @@
                         <p class="meal-time">MIDDAY BREAK</p>
                         <h3>Lunch</h3>
                         <p>Find a meal for your lunch break.</p>
-                        <a href="meal-planner.html" class="meal-link">
+                        <a href="mealPlanner.html" class="meal-link">
                             Plan lunch →
                         </a>
                     </article>
@@ -162,7 +162,7 @@
                         <p class="meal-time">END YOUR DAY</p>
                         <h3>Dinner</h3>
                         <p>Choose something nice for dinner.</p>
-                        <a href="meal-planner.html" class="meal-link">
+                        <a href="mealPlanner.html" class="meal-link">
                             Plan dinner →
                         </a>
                     </article>
@@ -223,6 +223,10 @@
             budgetResult.textContent =
                 "Your daily food budget is Rp " + formattedBudget + ".";
         });
+
+        function saveWeeklyBudget() {
+            return;
+        }
     </script>
 
 </body>

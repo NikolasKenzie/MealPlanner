@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AroundBite - Meal Planner</title>
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <link rel="stylesheet" href="styles/mealPlanner.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a href="index.html" class="logo">AroundBite<span>.</span></a>
+
+        <p class="menu-title">MENU</p>
+
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="nav-link">
+            <img src="assets/images/house.svg" alt="" class="nav-icon" />
+            <span>Dashboard</span>
+          </a>
+
+          <a href="mealPlanner.html" class="nav-link active">
+            <img
+              src="assets/images/calendar-days.svg"
+              alt=""
+              class="nav-icon"
+            />
+            <span>Meal Planner</span>
+          </a>
+
+          <a href="exploreFood.html" class="nav-link">
+            <img src="assets/images/utensils.svg" alt="" class="nav-icon" />
+            <span>Explore Food</span>
+          </a>
+
+          <a href="budget.html" class="nav-link">
+            <img src="assets/images/wallet.svg" alt="" class="nav-icon" />
+            <span>Budget Tracker</span>
+          </a>
+
+          <a href="profile.html" class="nav-link">
+            <img src="assets/images/user-round.svg" alt="" class="nav-icon" />
+            <span>My Profile</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <p class="note-title">A little reminder</p>
+            <p>Eat well, live well.</p>
+          </div>
+
+          <a href="index.html" class="back-link">
+            <img src="assets/images/undo-2.svg" alt="" class="nav-icon" />
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="welcome">
+          <div class="welcome-text">
+            <p class="eyebrow">MEAL PLANNER</p>
+            <h1>1 Week Meal Plan</h1>
+            <p>
+              Plan your breakfast, lunch, and dinner schedule for 7 days, in
+              line with your weekly budget.
+            </p>
+          </div>
+        </div>
+
+        <!-- Budget Generator Card -->
+        <div class="planner-card">
+          <h2>Set your weekly Budget</h2>
+          <p class="section-description">
+            The system will generate the best menu variations.
+          </p>
+
+          <form id="planner-form" class="planner-form">
+            <div class="input-group">
+              <label for="weekly-budget">Total Budget (Rp)</label>
+              <div class="budget-input">
+                <span>Rp</span>
+                <input
+                  type="number"
+                  id="weekly-budget"
+                  placeholder="Set your weekly budget"
+                  min="10000"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit" class="primary-button">
+              Generate Meal Plan
+            </button>
+          </form>
+        </div>
+
+        <!-- Hasil Generate Meal Plan -->
+        <div id="planner-results" class="planner-results hidden">
+          <div class="result-summary">
+            <div>
+              <h2>Weekly Menu Schedule</h2>
+              <p id="budget-status-text" class="section-description">
+                Here are some varied menu recommendations for you. Click
+                "Change" on a menu item to modify it.
+              </p>
+            </div>
+            <div class="total-badge">
+              <span>Estimate Total:</span>
+              <strong id="total-cost-display">Rp 0</strong>
+            </div>
+          </div>
+
+          <!-- Container 7 Hari -->
+          <div id="days-container" class="days-container">
+            <!-- Diisi lewat JavaScript -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Ganti Menu -->
+    <div id="change-menu-modal" class="modal hidden">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Pilih Menu Pengganti</h2>
+          <button class="close-btn" id="close-modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="input-group" style="margin-bottom: 15px">
+            <label for="modal-menu-select">Pilih dari menu tersedia:</label>
+            <select
+              id="modal-menu-select"
+              class="category-select"
+              style="width: 100%; margin-top: 6px"
+            >
+              <!-- Opsi menu dari JSON -->
+            </select>
+          </div>
+          <button
+            type="button"
+            id="save-menu-change"
+            class="primary-button"
+            style="width: 100%"
+          >
+            Simpan Perubahan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script Logika Meal Planner dengan LocalStorage -->
+    <script>
+      let menuData = [];
+      let weeklyPlanData = [];
+      let activeDayIndex = null;
+      let activeMealIndex = null;
+
+      const daysOfWeek = [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+
+      function formatRupiah(number) {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          maximumFractionDigits: 0,
+        }).format(number);
+      }
+
+      const plannerForm = document.getElementById("planner-form");
+      const weeklyBudgetInput = document.getElementById("weekly-budget");
+      const plannerResults = document.getElementById("planner-results");
+      const daysContainer = document.getElementById("days-container");
+      const totalCostDisplay = document.getElementById("total-cost-display");
+      const budgetStatusText = document.getElementById("budget-status-text");
+
+      const changeModal = document.getElementById("change-menu-modal");
+      const closeModalBtn = document.getElementById("close-modal");
+      const saveMenuChangeBtn = document.getElementById("save-menu-change");
+      const modalMenuSelect = document.getElementById("modal-menu-select");
+
+      async function fetchMenuData() {
+        try {
+          const response = await fetch("assets/db/menu_kantin.json");
+          if (!response.ok) throw new Error("Gagal mengambil data menu");
+          menuData = await response.json();
+          populateModalSelect();
+
+          // Cek data tersimpan di LocalStorage setelah JSON dimuat
+          loadFromLocalStorage();
+        } catch (error) {
+          console.error("Error:", error);
+          alert(
+            "Gagal memuat file menu_kantin.json. Pastikan server lokal aktif.",
+          );
+        }
+      }
+
+      fetchMenuData();
+
+      function populateModalSelect() {
+        modalMenuSelect.innerHTML = "";
+        menuData.forEach((item, index) => {
+          const opt = document.createElement("option");
+          opt.value = index;
+          opt.textContent = `${item.nama_makanan} (${item.nama_toko}) - ${formatRupiah(item.harga)}`;
+          modalMenuSelect.appendChild(opt);
+        });
+      }
+
+      function getRandomItem(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      // Simpan data ke LocalStorage
+      function saveToLocalStorage(budget, plan) {
+        localStorage.setItem("aroundbite_weekly_budget", budget);
+        localStorage.setItem("aroundbite_meal_plan", JSON.stringify(plan));
+      }
+
+      // Muat data dari LocalStorage jika ada
+      function loadFromLocalStorage() {
+        const savedBudget = localStorage.getItem("aroundbite_weekly_budget");
+        const savedPlan = localStorage.getItem("aroundbite_meal_plan");
+
+        if (savedBudget && savedPlan) {
+          weeklyBudgetInput.value = savedBudget;
+          weeklyPlanData = JSON.parse(savedPlan);
+          renderMealPlan(Number(savedBudget));
+        }
+      }
+
+      plannerForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (menuData.length === 0) {
+          alert("Data menu belum siap.");
+          return;
+        }
+        const budget = Number(weeklyBudgetInput.value);
+        generateInitialMealPlan(budget);
+      });
+
+      function generateInitialMealPlan(maxBudget) {
+        const makananList = menuData.filter((item) => item.jenis === "Makanan");
+        const minumanList = menuData.filter((item) => item.jenis === "Minuman");
+        const camilanList = menuData.filter((item) => item.jenis === "Camilan");
+
+        weeklyPlanData = [];
+
+        daysOfWeek.forEach((day) => {
+          const breakfast = getRandomItem(
+            makananList.length ? makananList : menuData,
+          );
+          const lunch = getRandomItem(
+            makananList.length ? makananList : menuData,
+          );
+          const dinner = getRandomItem(
+            makananList.length ? makananList : menuData,
+          );
+          const drinkOrSnack = getRandomItem([
+            ...minumanList,
+            ...camilanList,
+            ...makananList,
+          ]);
+
+          const dailyItems = [
+            { time: "Breakfast", ...breakfast },
+            { time: "Lunch", ...lunch },
+            { time: "Snack", ...drinkOrSnack },
+            { time: "Dinner", ...dinner },
+          ];
+
+          weeklyPlanData.push({ day, items: dailyItems });
+        });
+
+        // Simpan ke LocalStorage & render UI
+        saveToLocalStorage(maxBudget, weeklyPlanData);
+        renderMealPlan(maxBudget);
+      }
+
+      function renderMealPlan(maxBudget) {
+        daysContainer.innerHTML = "";
+        let grandTotal = 0;
+
+        weeklyPlanData.forEach((plan, dIndex) => {
+          let dailyTotal = 0;
+          let itemsHTML = "";
+
+          plan.items.forEach((i, mIndex) => {
+            dailyTotal += i.harga;
+            itemsHTML += `
+                        <div class="meal-row">
+                            <div class="meal-info-left">
+                                <span class="meal-time-tag">${i.time}</span>
+                                <span class="meal-name">${i.nama_makanan} <small>(${i.nama_toko})</small></span>
+                            </div>
+                            <div class="meal-info-right">
+                                <span class="meal-price">${formatRupiah(i.harga)}</span>
+                                <button class="change-btn" onclick="openChangeModal(${dIndex}, ${mIndex})">Change</button>
+                            </div>
+                        </div>
+                    `;
+          });
+
+          grandTotal += dailyTotal;
+
+          const dayCard = document.createElement("div");
+          dayCard.className = "day-card";
+          dayCard.innerHTML = `
+                    <div class="day-header">
+                        <h3>${plan.day}</h3>
+                        <span class="daily-total">Total: ${formatRupiah(dailyTotal)}</span>
+                    </div>
+                    <div class="meal-list">
+                        ${itemsHTML}
+                    </div>
+                `;
+          daysContainer.appendChild(dayCard);
+        });
+
+        totalCostDisplay.textContent = formatRupiah(grandTotal);
+
+        if (grandTotal <= maxBudget) {
+          budgetStatusText.textContent = `Your estimated expenses (${formatRupiah(grandTotal)}), safe and within budget.`;
+          budgetStatusText.style.color = "#477c59";
+        } else {
+          budgetStatusText.textContent = `Catatan: your estimate expenses (${formatRupiah(grandTotal)}), over weekly budget`;
+          budgetStatusText.style.color = "#d97706";
+        }
+
+        plannerResults.classList.remove("hidden");
+      }
+
+      // Modal Handlers
+      window.openChangeModal = function (dayIndex, mealIndex) {
+        activeDayIndex = dayIndex;
+        activeMealIndex = mealIndex;
+        changeModal.classList.remove("hidden");
+      };
+
+      closeModalBtn.onclick = () => changeModal.classList.add("hidden");
+      window.onclick = (e) => {
+        if (e.target === changeModal) changeModal.classList.add("hidden");
+      };
+
+      // Simpan Perubahan Menu & Update LocalStorage
+      saveMenuChangeBtn.onclick = () => {
+        const selectedMenuIndex = modalMenuSelect.value;
+        const chosenItem = menuData[selectedMenuIndex];
+
+        weeklyPlanData[activeDayIndex].items[activeMealIndex] = {
+          ...weeklyPlanData[activeDayIndex].items[activeMealIndex],
+          ...chosenItem,
+        };
+
+        const currentBudget = Number(weeklyBudgetInput.value);
+
+        // Perbarui data di LocalStorage
+        saveToLocalStorage(currentBudget, weeklyPlanData);
+
+        changeModal.classList.add("hidden");
+        renderMealPlan(currentBudget);
+      };
+    </script>
+  </body>
+</html>
