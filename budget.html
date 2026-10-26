@@ -259,10 +259,7 @@
                 </table>
             </div>
         </section>
-
-        <footer>
-            <p>© 2026 AroundBite. Plan Better. Eat Smarter.</p>
-        </footer>
+=
 
     </main>
 </div>
@@ -280,6 +277,33 @@
     let expenses = JSON.parse(
         localStorage.getItem("aroundbite-expenses") || "[]"
     );
+
+    // CONTOH KODE UNTUK HALAMAN USER (Meal Planner / Dashboard)
+
+// 1. Saat form budget di-submit oleh user:
+const plannerForm = document.getElementById("planner-form");
+const weeklyBudgetInput = document.getElementById("weekly-budget");
+
+if (plannerForm) {
+    plannerForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const budgetValue = Number(weeklyBudgetInput.value);
+        
+        // Simpan ke localStorage agar bisa diakses lintas halaman
+        localStorage.setItem("aroundbite_weekly_budget", budgetValue);
+        
+        // (Opsional) Jika kamu ingin seller atau halaman lain tahu sisa budget / total plan
+        alert("Budget mingguan berhasil disimpan dan disinkronkan!");
+    });
+}
+
+// 2. Saat halaman dimuat, otomatis ambil data budget yang tersimpan (jika ada)
+window.addEventListener("DOMContentLoaded", () => {
+    const savedBudget = localStorage.getItem("aroundbite_weekly_budget");
+    if (savedBudget && weeklyBudgetInput) {
+        weeklyBudgetInput.value = savedBudget;
+    }
+});
 
     function formatRupiah(amount) {
         return "Rp " + amount.toLocaleString("id-ID");

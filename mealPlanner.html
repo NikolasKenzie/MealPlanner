@@ -329,6 +329,14 @@
 
       function populateModalSelect() {
         modalMenuSelect.innerHTML = "";
+
+        // Tambahkan opsi untuk mengosongkan menu
+        const emptyOpt = document.createElement("option");
+        emptyOpt.value = "EMPTY";
+        emptyOpt.textContent = "clear menu";
+        modalMenuSelect.appendChild(emptyOpt);
+
+        // Masukkan daftar menu dari JSON
         menuData.forEach((item, index) => {
           const opt = document.createElement("option");
           opt.value = index;
@@ -486,17 +494,29 @@
 
       // Simpan Perubahan Menu & Update LocalStorage
       saveMenuChangeBtn.onclick = () => {
-        const selectedMenuIndex = modalMenuSelect.value;
-        const chosenItem = menuData[selectedMenuIndex];
+        const selectedValue = modalMenuSelect.value;
+        const currentItem =
+          weeklyPlanData[activeDayIndex].items[activeMealIndex];
 
-        weeklyPlanData[activeDayIndex].items[activeMealIndex] = {
-          ...weeklyPlanData[activeDayIndex].items[activeMealIndex],
-          ...chosenItem,
-        };
+        if (selectedValue === "EMPTY") {
+          // Jika dipilih kosong, ubah item menjadi kosong/null
+          weeklyPlanData[activeDayIndex].items[activeMealIndex] = {
+            time: currentItem.time,
+            nama_makanan: "Tidak ada menu",
+            nama_toko: "-",
+            harga: 0,
+            isEmpty: true,
+          };
+        } else {
+          const chosenItem = menuData[selectedValue];
+          weeklyPlanData[activeDayIndex].items[activeMealIndex] = {
+            time: currentItem.time,
+            ...chosenItem,
+            isEmpty: false,
+          };
+        }
 
         const currentBudget = Number(weeklyBudgetInput.value);
-
-        // Perbarui data di LocalStorage
         saveToLocalStorage(currentBudget, weeklyPlanData);
 
         changeModal.classList.add("hidden");
