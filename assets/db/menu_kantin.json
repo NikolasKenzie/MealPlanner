@@ -93,7 +93,7 @@
   {
     "nama_toko": "A LIMA",
     "jenis": "Camilan",
-    "nama_makanan": "Cireng Sambel Rujak",
+    "nama_makanan": "Ciremg Sambel Rujak",
     "harga": 10000
   },
   {
@@ -507,7 +507,7 @@
   {
     "nama_toko": "Waroenk Ping An",
     "jenis": "Lainnya",
-    "nama_makanan": "Bakso Kuah",
+    "nama_makanan": "Baso Kuah",
     "harga": 15000
   },
   {
@@ -641,5 +641,677 @@
     "jenis": "Makanan",
     "nama_makanan": "Mie Nyemek",
     "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasgor Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasgor Shanghai",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasgor Gila",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Kwetiaw Biasa",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Soto Betawi + Nasi",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Sop Ayam + Nasi",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Capcai Ayam + Nasi",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Nasgor Ijo Spesial",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Nasgor Spesial",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Kwetiaw Spesial",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Ayam Saos Padang + Nasi",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Ayam Rica Rica + Nasi",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Ayam Goreng Mentega + Nasi",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Ayam Bakar/Goreng + Nasi",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Ayam Crispy Mayo + Nasi",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasgor Seafood",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 22K",
+    "nama_makanan": "Udang Crispy / Cumi Saos Padang",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 22K",
+    "nama_makanan": "Udang Crispy / Cumi Asam Manis",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 22K",
+    "nama_makanan": "Tongseng Ayam + Nasi",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket 22K",
+    "nama_makanan": "Udang Crispy / Cumi Goreng",
+    "harga": 22000
+  },
+  {
+    "nama_toko": "COME BACK FOOD",
+    "jenis": "Paket Spesial 25K",
+    "nama_makanan": "Nasgor Ayam Bakar",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasi Goreng Oriental",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasi Goreng Shanghai",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Bihun Goreng Oriental",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Mie Goreng Oriental",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Kwetiau Oriental",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasi + Telur Dadar Bakar",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasi + Telur Geprek",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam (Penyet, Bakar, Geprek)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Crispy (Bebas Pilih Saos)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Crispy Cabe Garam",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Chicken Katsu (Nasi / Kentang)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Chicken Steak (Nasi / Kentang)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Spicy Hot Wing (Nasi / Kentang)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Goreng Seafood",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Goreng Toping (Telur/Buget/Otak-Otak)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Goreng (Cumi/Teri)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Udang Crispy (Bebas Pilih Saos)",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Sapo Tahu",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 25K",
+    "nama_makanan": "Nasi Goreng Toping (Katsu, Crispy, Bakar)",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "PAWON PITU",
+    "jenis": "Paket 25K",
+    "nama_makanan": "Chicken Cordon Blue (Nasi, Kentang)",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Gulai",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Bakar",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Goreng",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Ayam Balado",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Rendang",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Cincang",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 20K",
+    "nama_makanan": "Nasi Sop / Pindang",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Nasi Ikan Bakar/Goreng Balado",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Paket Nasi Kikil",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 18K",
+    "nama_makanan": "Nasi Ikan Bakar",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 12K",
+    "nama_makanan": "Nasi Telur Balado",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 12K",
+    "nama_makanan": "Nasi Telur Dadar",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 25K",
+    "nama_makanan": "Nasi Kepala Kakap",
+    "harga": 25000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 28K",
+    "nama_makanan": "Paket Nasi Dendeng",
+    "harga": 28000
+  },
+  {
+    "nama_toko": "Rumah Makan Padang Maninjau Indah",
+    "jenis": "Paket 15K",
+    "nama_makanan": "Nasi Ati Ampela",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Bakso Pojok",
+    "jenis": "Bakso",
+    "nama_makanan": "Bakso Urat",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Bakso Pojok",
+    "jenis": "Bakso",
+    "nama_makanan": "Bakso Halus",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Bakso Pojok",
+    "jenis": "Bakso",
+    "nama_makanan": "Bakso Telur",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Bakso Pojok",
+    "jenis": "Bakso",
+    "nama_makanan": "Bakso Malang",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Paket",
+    "nama_makanan": "Kebab + French Fries",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Paket",
+    "nama_makanan": "Roti Sosis + French Fries",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Paket",
+    "nama_makanan": "Toast + French Fries",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Paket",
+    "nama_makanan": "Burger + French Fries",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Extra Topping",
+    "nama_makanan": "Slice Cheese",
+    "harga": 3000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Extra Topping",
+    "nama_makanan": "Mozzarella Cheese",
+    "harga": 6000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Extra Topping",
+    "nama_makanan": "Kebab Meat",
+    "harga": 7000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Kebab Medium (Chicken/Beef)",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Kebab Large (Chicken/Beef)",
+    "harga": 18000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Burger (Chicken/Beef)",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Chicken Cilin (Chili & Pepper)",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Toast (Chicken & Tuna Mayo)",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Cane Original",
+    "harga": 9000
+  },
+  {
+    "nama_toko": "keubab",
+    "jenis": "Ala Carte",
+    "nama_makanan": "Cane Choco Cheese",
+    "harga": 12000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Minuman",
+    "nama_makanan": "Kopi Nusantara",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Minuman",
+    "nama_makanan": "Teh Nusantara",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Boba",
+    "nama_makanan": "Thai Tea",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Boba",
+    "nama_makanan": "Palm Sugar Coffee",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Boba",
+    "nama_makanan": "Choco Hazelnut",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Boba",
+    "nama_makanan": "Green Tea",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Boba",
+    "nama_makanan": "Matcha",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Mangga",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Alpukat",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Jambu Merah",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Semangka",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Melon",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Buah Naga",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Strawberry",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Joylicious",
+    "jenis": "Varian Jus",
+    "nama_makanan": "Jus Nanas",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Rawon Ayam",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Ayam Penyet",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Ayam Goreng",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Rica-Rica",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Ayam Bakar Bumbu",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Kuning/Biasa",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Gado-Gado Lontong",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Nasi Campur + Telur",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 20K",
+    "nama_makanan": "Chicken Katsu",
+    "harga": 20000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 15K",
+    "nama_makanan": "Nasi Campur",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 15K",
+    "nama_makanan": "Seblak",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 15K",
+    "nama_makanan": "Pempek-Pempek",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 15K",
+    "nama_makanan": "Nasi Soto",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu 15K",
+    "nama_makanan": "Indomie Telur",
+    "harga": 15000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu Soto",
+    "nama_makanan": "Soto",
+    "harga": 13000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Menu Indomie",
+    "nama_makanan": "Indomie Biasa",
+    "harga": 9000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman 6K",
+    "nama_makanan": "Kopi Es",
+    "harga": 6000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman 6K",
+    "nama_makanan": "Sachetan Chocolatos",
+    "harga": 6000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Camilan",
+    "nama_makanan": "Gorengan (3 pcs)",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman 5K",
+    "nama_makanan": "Es Teh Manis",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman 5K",
+    "nama_makanan": "Kopi Panas",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman 5K",
+    "nama_makanan": "Nutrisari",
+    "harga": 5000
+  },
+  {
+    "nama_toko": "Masakan Bunda",
+    "jenis": "Minuman",
+    "nama_makanan": "Vit",
+    "harga": 4000
   }
 ]
