@@ -7,8 +7,8 @@
 }
 
 body {
-    background-color: #f5f9f6;
-    color: #294b3b;
+    background-color: #ecfdf5;
+    color: #064e3b;
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
@@ -33,15 +33,15 @@ input {
 .sidebar {
     width: 245px;
     min-width: 245px;
-    background-color: white;
-    border-right: 1px solid #e5eee7;
+    background-color: #FFFFFF;
+    border-right: 1px solid #d1fae5;
     padding: 32px 22px;
     display: flex;
     flex-direction: column;
 }
 
 .logo {
-    color: #315b43;
+    color: #059669;
     font-size: 28px;
     font-weight: bold;
     letter-spacing: -1px;
@@ -49,11 +49,11 @@ input {
 }
 
 .logo span {
-    color: #8bbf9c;
+    color: #059669;
 }
 
 .menu-title {
-    color: #9aaca0;
+    color: #86a99c;
     font-size: 11px;
     font-weight: bold;
     letter-spacing: 1.5px;
@@ -72,18 +72,18 @@ input {
     gap: 13px;
     padding: 12px 14px;
     border-radius: 10px;
-    color: #718277;
+    color: #53786b;
     transition: background-color 0.2s, color 0.2s;
 }
 
 .nav-link:hover {
-    background-color: #f1f7f2;
-    color: #315b43;
+    background-color: #ecfdf5;
+    color: #064e3b;
 }
 
 .nav-link.active {
-    background-color: #e7f3e9;
-    color: #315b43;
+    background-color: #d1fae5;
+    color: #064e3b;
     font-weight: bold;
 }
 
@@ -99,20 +99,20 @@ input {
 }
 
 .sidebar-note {
-    background-color: #f4f8f3;
+    background-color: #ecfdf5;
     border-radius: 12px;
     padding: 17px;
     margin-bottom: 22px;
 }
 
 .note-title {
-    color: #315b43;
+    color: #064e3b;
     font-weight: bold;
     margin-bottom: 4px;
 }
 
 .sidebar-note p:last-child {
-    color: #829287;
+    color: #53786b;
     font-size: 12px;
 }
 
@@ -120,13 +120,13 @@ input {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #718277;
+    color: #53786b;
     font-size: 13px;
     padding: 8px 4px;
 }
 
 .back-link:hover {
-    color: #315b43;
+    color: #059669;
 }
 
 /* Main Content */
@@ -145,7 +145,7 @@ input {
 }
 
 .eyebrow {
-    color: #7aa889;
+    color: #059669;
     font-size: 10px;
     font-weight: bold;
     letter-spacing: 1.5px;
@@ -153,14 +153,14 @@ input {
 }
 
 .welcome h1 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 30px;
     line-height: 1.3;
     margin-bottom: 10px;
 }
 
 .welcome-text > p:last-child {
-    color: #849389;
+    color: #78958a;
     max-width: 480px;
 }
 
@@ -170,8 +170,8 @@ input {
     align-items: center;
     border: none;
     border-radius: 9px;
-    background-color: #477c59;
-    color: white;
+    background-color: #059669;
+    color: #FFFFFF;
     padding: 12px 19px;
     font-size: 13px;
     font-weight: bold;
@@ -181,13 +181,13 @@ input {
 }
 
 .primary-button:hover {
-    background-color: #356646;
+    background-color: #047857;
 }
 
 /* Budget Card */
 .budget-card {
-    background-color: white;
-    border: 1px solid #e5eee7;
+    background-color: #FFFFFF;
+    border: 1px solid #d1fae5;
     border-radius: 16px;
     padding: 26px;
     margin-bottom: 36px;
@@ -203,13 +203,13 @@ input {
 
 .budget-header h2,
 .section-heading h2 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 21px;
     margin-bottom: 5px;
 }
 
 .section-description {
-    color: #89968c;
+    color: #78958a;
     font-size: 13px;
 }
 
@@ -220,7 +220,7 @@ input {
     width: 46px;
     height: 46px;
     flex-shrink: 0;
-    background-color: #edf6ee;
+    background-color: #d1fae5;
     border-radius: 12px;
 }
 
@@ -242,7 +242,7 @@ input {
 
 .input-group label {
     display: block;
-    color: #536b5b;
+    color: #53786b;
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -252,18 +252,18 @@ input {
     display: flex;
     align-items: center;
     gap: 10px;
-    border: 1px solid #dce8de;
+    border: 1px solid #ccebdc;
     border-radius: 9px;
     padding: 0 13px;
-    background-color: #fcfefc;
+    background-color: #f7fdf9;
 }
 
 .budget-input:focus-within {
-    border-color: #7eaf8b;
+    border-color: #059669;
 }
 
 .budget-input span {
-    color: #6e8976;
+    color: #059669;
     font-weight: bold;
 }
 
@@ -273,13 +273,13 @@ input {
     border: none;
     outline: none;
     background: transparent;
-    color: #294b3b;
+    color: #064e3b;
     padding: 12px 0;
 }
 
 .budget-result {
-    color: #477c59;
-    background-color: #f3f8f3;
+    color: #059669;
+    background-color: #ecfdf5;
     border-radius: 8px;
     padding: 11px 14px;
     margin-top: 18px;
@@ -300,7 +300,7 @@ input {
 }
 
 .text-link {
-    color: #477c59;
+    color: #059669;
     font-size: 12px;
     font-weight: bold;
     white-space: nowrap;
@@ -308,7 +308,7 @@ input {
 
 .text-link:hover,
 .meal-link:hover {
-    color: #294b3b;
+    color: #064e3b;
 }
 
 /* Meal Cards */
@@ -320,34 +320,34 @@ input {
 
 .meal-card {
     position: relative;
-    background-color: white;
-    border: 1px solid #e5eee7;
+    background-color: #FFFFFF;
+    border: 1px solid #d1fae5;
     border-radius: 14px;
     padding: 22px 19px;
     overflow: hidden;
 }
 
 .breakfast {
-    border-top: 3px solid #b9d9b7;
+    border-top: 3px solid #059669;
 }
 
 .lunch {
-    border-top: 3px solid #d5e5bd;
+    border-top: 3px solid #d1fae5;
 }
 
 .dinner {
-    border-top: 3px solid #c5d9d0;
+    border-top: 3px solid #e5f5ec;
 }
 
 .meal-number {
-    color: #b4c9b8;
+    color: #91a99e;
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 16px;
 }
 
 .meal-time {
-    color: #8aa492;
+    color: #059669;
     font-size: 9px;
     font-weight: bold;
     letter-spacing: 1px;
@@ -355,40 +355,40 @@ input {
 }
 
 .meal-card h3 {
-    color: #315b43;
+    color: #064e3b;
     font-size: 19px;
     margin-bottom: 7px;
 }
 
 .meal-card > p:not(.meal-number):not(.meal-time) {
-    color: #87958a;
+    color: #78958a;
     font-size: 12px;
     min-height: 40px;
     margin-bottom: 17px;
 }
 
 .meal-link {
-    color: #477c59;
+    color: #059669;
     font-size: 12px;
     font-weight: bold;
 }
 
 /* Explore Food */
 .food-card {
-    background-color: #edf5ed;
-    border: 1px solid #e0ece1;
+    background-color: #ecfdf5;
+    border: 1px solid #d1fae5;
     border-radius: 15px;
     padding: 28px;
 }
 
 .food-card-text h3 {
-    color: #315b43;
+    color: #064e3b;
     font-size: 20px;
     margin-bottom: 8px;
 }
 
 .food-card-text p {
-    color: #74877a;
+    color: #53786b;
     font-size: 13px;
     max-width: 470px;
     margin-bottom: 19px;
@@ -396,13 +396,13 @@ input {
 
 /* Footer */
 footer {
-    border-top: 1px solid #e5eee7;
+    border-top: 1px solid #d1fae5;
     padding-top: 20px;
     margin-top: 42px;
 }
 
 footer p {
-    color: #9aa89d;
+    color: #91a99e;
     font-size: 11px;
     text-align: center;
 }
@@ -438,7 +438,7 @@ footer p {
         min-width: 0;
         padding: 18px 20px;
         border-right: none;
-        border-bottom: 1px solid #e5eee7;
+        border-bottom: 1px solid #d1fae5;
     }
 
     .logo {

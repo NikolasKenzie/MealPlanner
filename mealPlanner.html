@@ -40,10 +40,16 @@
             <span>Budget Tracker</span>
           </a>
 
+           <a href="bmi.html" class="nav-link" aria-current="page">
+                <img src="assets/images/calculator.svg" alt="" class="nav-icon">
+                <span>BMI Calculator</span>
+            </a>
+
           <a href="profile.html" class="nav-link">
             <img src="assets/images/user-round.svg" alt="" class="nav-icon" />
             <span>My Profile</span>
           </a>
+
         </nav>
 
         <div class="sidebar-bottom">
@@ -93,9 +99,15 @@
                 />
               </div>
             </div>
-            <button type="submit" class="primary-button">
+                <div class="planner-buttons">
+          <button type="submit" class="primary-button">
               Generate Meal Plan
-            </button>
+          </button>
+
+          <button type="button" id="reset-plan" class="reset-button">
+              Reset Plan
+          </button>
+             </div>
           </form>
 
           <div>
@@ -185,6 +197,7 @@
 
       const plannerForm = document.getElementById("planner-form");
       const weeklyBudgetInput = document.getElementById("weekly-budget");
+      const resetPlanButton = document.getElementById("reset-plan");
       const plannerResults = document.getElementById("planner-results");
       const daysContainer = document.getElementById("days-container");
       const totalCostDisplay = document.getElementById("total-cost-display");
@@ -377,6 +390,32 @@
         changeModal.classList.add("hidden");
         renderMealPlan(currentBudget);
       };
+
+      
+resetPlanButton.addEventListener("click", function () {
+    const confirmReset = confirm(
+        "Are you sure you want to reset your weekly meal plan?"
+    );
+
+    if (!confirmReset) return;
+
+    localStorage.removeItem("aroundbite_weekly_budget");
+    localStorage.removeItem("aroundbite_meal_plan");
+
+    weeklyBudgetInput.value = "";
+    weeklyPlanData = [];
+    daysContainer.innerHTML = "";
+
+    plannerResults.classList.add("hidden");
+    totalCostDisplay.textContent = formatRupiah(0);
+
+    budgetStatusText.textContent =
+        "Here are some varied menu recommendations for you.";
+    budgetStatusText.style.color = "";
+
+    alert("Your meal plan has been reset!");
+});
+
     </script>
   </body>
 </html>

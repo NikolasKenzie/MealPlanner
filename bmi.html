@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator - AroundBite</title>
+
+    <!-- Reuse the existing dashboard sidebar styles -->
+    <link rel="stylesheet" href="styles/budget.css">
+    <link rel="stylesheet" href="styles/bmi.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="sidebar">
+        <a href="index.html" class="logo">AroundBite<span>.</span></a>
+
+        <p class="menu-title">MENU</p>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-link">
+                <img src="assets/images/house.svg" alt="" class="nav-icon">
+                <span>Dashboard</span>
+            </a>
+
+            <a href="mealPlanner.html" class="nav-link">
+                <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
+                <span>Meal Planner</span>
+            </a>
+
+            <a href="exploreFood.html" class="nav-link">
+                <img src="assets/images/utensils.svg" alt="" class="nav-icon">
+                <span>Explore Food</span>
+            </a>
+
+            <a href="budget.html" class="nav-link">
+                <img src="assets/images/wallet.svg" alt="" class="nav-icon">
+                <span>Budget Tracker</span>
+            </a>
+
+             <a href="bmi.html" class="nav-link active" aria-current="page">
+                <img src="assets/images/calculator.svg" alt="" class="nav-icon">
+                <span>BMI Calculator</span>
+            </a>
+            
+            <a href="profile.html" class="nav-link">
+                <img src="assets/images/user-round.svg" alt="" class="nav-icon">
+                <span>My Profile</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-note">
+                <p class="note-title">A little reminder</p>
+                <p>Eat well, live well.</p>
+            </div>
+
+            <a href="index.html" class="back-link">
+                <img src="assets/images/undo-2.svg" alt="" class="nav-icon">
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main class="main-content">
+
+        <header class="page-header">
+            <div>
+                <p class="eyebrow">YOUR WELLNESS</p>
+                <h1>BMI Calculator</h1>
+                <p class="description">
+                    Enter your measurements to calculate your BMI.
+                </p>
+            </div>
+        </header>
+
+        <section class="bmi-container">
+            <div class="bmi-card">
+
+                <div class="bmi-header">
+                    <div class="bmi-icon">♡</div>
+                    <h2>Calculate Your BMI</h2>
+                    <p>Understand your measurements</p>
+                </div>
+
+                <form id="bmi-form">
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input
+                            type="number"
+                            id="height"
+                            placeholder="Enter your height"
+                            min="1"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input
+                            type="number"
+                            id="weight"
+                            placeholder="Enter your weight"
+                            min="1"
+                            step="any"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="calculate-button">
+                        Calculate BMI
+                    </button>
+                </form>
+
+                <div id="bmi-result" class="result hidden" aria-live="polite">
+                    <p class="result-label">Your BMI result</p>
+                    <h2 id="bmi-value">--</h2>
+                    <p id="bmi-message"></p>
+                    <p class="result-note">
+                        BMI is a screening tool and does not determine
+                        your overall health.
+                    </p>
+                </div>
+
+                <p id="bmi-error" class="error-message hidden" role="alert"></p>
+
+                <p class="privacy-note">
+                    Your saved Profile measurements will be loaded
+                    when available. You can also enter them manually.
+                </p>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 AroundBite. Plan Better. Eat Smarter.</p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="scripts/bmi.js"></script>
+</body>
+</html>

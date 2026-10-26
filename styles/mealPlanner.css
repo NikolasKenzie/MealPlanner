@@ -1,15 +1,16 @@
+
 /* Styling Meal Planner */
 
 .planner-card {
     background-color: white;
-    border: 1px solid #e5eee7;
+    border: 1px solid #d1fae5;
     border-radius: 16px;
     padding: 28px;
     margin-bottom: 32px;
 }
 
 .planner-card h2 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 20px;
     margin-bottom: 6px;
 }
@@ -27,7 +28,7 @@
 
 .result-summary {
     background-color: white;
-    border: 1px solid #e5eee7;
+    border: 1px solid #d1fae5;
     border-radius: 16px;
     padding: 24px;
     display: flex;
@@ -39,14 +40,14 @@
 }
 
 .result-summary h2 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 20px;
     margin-bottom: 4px;
 }
 
 .total-badge {
-    background-color: #edf6ee;
-    border: 1px solid #dce8de;
+    background-color: #ecfdf5;
+    border: 1px solid #ccebdc;
     padding: 12px 20px;
     border-radius: 12px;
     display: flex;
@@ -56,13 +57,13 @@
 
 .total-badge span {
     font-size: 11px;
-    color: #718277;
+    color: #53786b;
     font-weight: bold;
 }
 
 .total-badge strong {
     font-size: 18px;
-    color: #315b43;
+    color: #064e3b;
 }
 
 /* Days Container Grid */
@@ -74,31 +75,31 @@
 
 .day-card {
     background-color: white;
-    border: 1px solid #e5eee7;
+    border: 1px solid #d1fae5;
     border-radius: 16px;
     padding: 22px;
     display: flex;
     flex-direction: column;
     gap: 16px;
-    box-shadow: 0 4px 12px rgba(41, 75, 59, 0.03);
+    box-shadow: 0 4px 12px rgba(6, 78, 59, 0.03);
 }
 
 .day-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #edf4ee;
+    border-bottom: 1px solid #d1fae5;
     padding-bottom: 12px;
 }
 
 .day-header h3 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 18px;
 }
 
 .daily-total {
-    background-color: #f4f8f3;
-    color: #477c59;
+    background-color: #d1fae5;
+    color: #047857;
     font-size: 12px;
     font-weight: bold;
     padding: 4px 10px;
@@ -115,8 +116,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f9fbf9;
-    border: 1px solid #edf4ee;
+    background-color: #f7fdf9;
+    border: 1px solid #d1fae5;
     padding: 10px 14px;
     border-radius: 10px;
 }
@@ -130,7 +131,7 @@
 .meal-time-tag {
     font-size: 10px;
     font-weight: bold;
-    color: #7aa889;
+    color: #059669;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -138,18 +139,18 @@
 .meal-name {
     font-size: 13px;
     font-weight: bold;
-    color: #294b3b;
+    color: #064e3b;
 }
 
 .meal-name small {
     font-weight: normal;
-    color: #849389;
+    color: #78958a;
 }
 
 .meal-price {
     font-size: 13px;
     font-weight: bold;
-    color: #477c59;
+    color: #059669;
     white-space: nowrap;
 }
 
@@ -161,9 +162,9 @@
 }
 
 .change-btn {
-    background-color: #edf6ee;
-    color: #315b43;
-    border: 1px solid #dce8de;
+    background-color: #d1fae5;
+    color: #064e3b;
+    border: 1px solid #ccebdc;
     padding: 5px 10px;
     font-size: 11px;
     font-weight: bold;
@@ -173,7 +174,7 @@
 }
 
 .change-btn:hover {
-    background-color: #d5e5bd;
+    background-color: #a7f3d0;
 }
 
 /* Modal Kustom */
@@ -212,7 +213,7 @@
 }
 
 .modal-header h2 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 18px;
 }
 
@@ -221,15 +222,73 @@
         flex-direction: column;
         align-items: stretch;
     }
+
     .planner-form button {
         width: 100%;
     }
+
     .result-summary {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .total-badge {
         width: 100%;
         align-items: flex-start;
+    }
+}
+
+/* Tombol Generate dan Reset Plan */
+.planner-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.planner-buttons .primary-button,
+.planner-buttons .reset-button {
+    padding: 12px 18px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.planner-buttons .primary-button {
+    background-color: #059669;
+    color: white;
+    border: 1px solid #059669;
+}
+
+.planner-buttons .primary-button:hover {
+    background-color: #047857;
+}
+
+.planner-buttons .reset-button {
+    background-color: white;
+    color: #064e3b;
+    border: 1px solid #059669;
+}
+
+.planner-buttons .reset-button:hover {
+    background-color: #d1fae5;
+}
+
+.planner-buttons button:active {
+    transform: scale(0.98);
+}
+
+/* Tampilan tombol di layar kecil */
+@media (max-width: 600px) {
+    .planner-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .planner-buttons button {
+        width: 100%;
     }
 }
