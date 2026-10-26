@@ -1,3 +1,4 @@
+
 /* Styling Explore Food */
 
 /* Filter Bar */
@@ -11,25 +12,25 @@
 .search-input {
     flex: 1;
     min-width: 220px;
-    border: 1px solid #dce8de;
+    border: 1px solid #ccebdc;
     border-radius: 9px;
     padding: 12px 16px;
     background-color: white;
-    color: #294b3b;
+    color: #064e3b;
     outline: none;
     font-size: 14px;
 }
 
 .search-input:focus {
-    border-color: #7eaf8b;
+    border-color: #059669;
 }
 
 .category-select {
-    border: 1px solid #dce8de;
+    border: 1px solid #ccebdc;
     border-radius: 9px;
     padding: 12px 16px;
     background-color: white;
-    color: #294b3b;
+    color: #064e3b;
     outline: none;
     font-size: 14px;
     cursor: pointer;
@@ -43,7 +44,7 @@
 }
 
 .no-data {
-    color: #849389;
+    color: #78958a;
     font-size: 14px;
     grid-column: 1 / -1;
 }
@@ -51,7 +52,7 @@
 /* Food Card Item */
 .food-card-item {
     background-color: white;
-    border: 1px solid #e5eee7;
+    border: 1px solid #d1fae5;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -61,14 +62,14 @@
 
 .food-card-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 20px rgba(41, 75, 59, 0.08);
+    box-shadow: 0 10px 20px rgba(6, 78, 59, 0.08);
 }
 
 .card-image-wrapper {
     position: relative;
     height: 160px;
     width: 100%;
-    background-color: #edf5ed;
+    background-color: #ecfdf5;
 }
 
 .card-img {
@@ -76,8 +77,6 @@
     height: 100%;
     object-fit: cover;
 }
-
-
 
 .card-content {
     padding: 20px;
@@ -87,20 +86,20 @@
 }
 
 .card-content h3 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 18px;
     margin-bottom: 6px;
 }
 
 .card-price {
-    color: #477c59;
+    color: #059669;
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
 .card-sample {
-    color: #849389;
+    color: #78958a;
     font-size: 12px;
     line-height: 1.5;
     margin-bottom: 20px;
@@ -141,28 +140,35 @@
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .modal-header {
     padding: 20px 24px;
-    border-bottom: 1px solid #e5eee7;
+    border-bottom: 1px solid #d1fae5;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 
 .modal-header h2 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 20px;
     margin-bottom: 4px;
 }
 
 .badge {
     display: inline-block;
-    background-color: #e7f3e9;
-    color: #315b43;
+    background-color: #d1fae5;
+    color: #064e3b;
     font-size: 11px;
     font-weight: bold;
     padding: 2px 8px;
@@ -173,12 +179,12 @@
     background: none;
     border: none;
     font-size: 24px;
-    color: #849389;
+    color: #78958a;
     cursor: pointer;
 }
 
 .close-btn:hover {
-    color: #294b3b;
+    color: #064e3b;
 }
 
 .modal-body {
@@ -187,7 +193,7 @@
 }
 
 .modal-body h3 {
-    color: #294b3b;
+    color: #064e3b;
     font-size: 14px;
     margin-bottom: 14px;
 }
@@ -206,8 +212,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 14px;
-    background-color: #f9fbf9;
-    border: 1px solid #edf4ee;
+    background-color: #f7fdf9;
+    border: 1px solid #d1fae5;
     border-radius: 10px;
 }
 
@@ -218,18 +224,18 @@
 }
 
 .menu-name {
-    color: #294b3b;
+    color: #064e3b;
     font-weight: bold;
     font-size: 14px;
 }
 
 .menu-type {
-    color: #849389;
+    color: #78958a;
     font-size: 11px;
 }
 
 .menu-price {
-    color: #477c59;
+    color: #059669;
     font-weight: bold;
     font-size: 13px;
 }
