@@ -4,6 +4,25 @@
         "email": "reyLandak@gmail.com",
         "telp": "08123456789",
         "password": "reylandak",
+        "role": "user",
+        "height": "175cm",
+        "weight": "60kg"
+    },
+     {
+        "username": "alip",
+        "email": "alip123@gmail.com",
+        "telp": "08123456789",
+        "password": "aliptitut",
+        "role": "user",
+        "height": "175cm",
+        "weight": "60kg"
+    },
+     {
+        "username": "Budi",
+        "email": "budi123@gmail.com",
+        "telp": "08123456789",
+        "password": "budigalaxy",
+        "role": "seller",
         "height": "175cm",
         "weight": "60kg"
     }

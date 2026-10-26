@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AroundBite - Seller Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <link rel="stylesheet" href="styles/sellerPage.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar Seller -->
+      <aside class="sidebar">
+        <a href="index.html" class="logo"
+          >AroundBite<span>.</span>
+          <small class="seller-badge">Seller</small></a
+        >
+
+        <p class="menu-title">SELLER MENU</p>
+
+        <nav class="sidebar-nav">
+          <a
+            href="#overview"
+            class="nav-link active"
+            onclick="switchTab(event, 'section-overview')"
+          >
+            <img src="assets/images/house.svg" alt="" class="nav-icon" />
+            <span>Overview</span>
+          </a>
+
+          <a
+            href="#menu"
+            class="nav-link"
+            onclick="switchTab(event, 'section-menu')"
+          >
+            <img src="assets/images/utensils.svg" alt="" class="nav-icon" />
+            <span>Atur Menu</span>
+          </a>
+
+          <a
+            href="#promo"
+            class="nav-link"
+            onclick="switchTab(event, 'section-promo')"
+          >
+            <img
+              src="assets/images/promotionIcon.svg"
+              alt=""
+              class="nav-icon"
+              onerror="this.src = 'assets/images/sparkles.svg'"
+            />
+            <span>Paid Promotion <span class="pro-tag">PRO</span></span>
+          </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <p class="note-title">Seller Center</p>
+            <p>Tingkatkan penjualan kantinmu.</p>
+          </div>
+
+          <a href="index.html" class="back-link">
+            <img src="assets/images/undo-2.svg" alt="" class="nav-icon" />
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- SECTION 1: OVERVIEW -->
+        <section id="section-overview" class="seller-section active">
+          <div class="welcome">
+            <div class="welcome-text">
+              <p class="eyebrow">SELLER DASHBOARD</p>
+              <h1 id="welcome-store-name">Halo, Family Kantin!</h1>
+              <p>
+                Kelola menu makanan, informasi toko, dan jangkau lebih banyak
+                pembeli lewat promosi berbayar.
+              </p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>Total Menu Aktif</span>
+              <h3 id="stat-total-menu">0</h3>
+            </div>
+            <div class="stat-card">
+              <span>Status Toko</span>
+              <h3 style="color: #477c59">Buka</h3>
+            </div>
+            <div class="stat-card">
+              <span>Status Promosi</span>
+              <h3 id="stat-promo-status" style="color: #849389">Non-Aktif</h3>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2: ATUR MENU (CRUD MENU) -->
+        <section id="section-menu" class="seller-section hidden">
+          <div class="section-heading-flex">
+            <div>
+              <h2>Manajemen Menu Makanan</h2>
+              <p class="section-description">
+                Tambah, ubah, atau hapus menu yang dijual di kantinmu.
+              </p>
+            </div>
+            <button
+              class="primary-button"
+              type="button"
+              onclick="openMenuModalForAdd()"
+            >
+              + Tambah Menu Baru
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table class="seller-table">
+              <thead>
+                <tr>
+                  <th>Nama Menu</th>
+                  <th>Kategori</th>
+                  <th>Harga</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="menu-table-body">
+                <!-- Data menu dirender via JS -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- SECTION 3: PAID PROMOTION (FITUR PREMIUM) -->
+        <section id="section-promo" class="seller-section hidden">
+          <div class="welcome">
+            <div class="welcome-text">
+              <p class="eyebrow">FITUR PREMIUM SELLER</p>
+              <h1>Paid Promotion (Iklan Toko)</h1>
+              <p>
+                Tampilkan kantinmu di posisi teratas hasil pencarian mahasiswa
+                untuk mendongkrak omset penjualan.
+              </p>
+            </div>
+          </div>
+
+          <div class="promo-banner-card">
+            <div class="promo-info">
+              <h3>🚀 Boost Penjualan Kantinmu</h3>
+              <p>
+                Dengan Paid Promotion, tokomu akan diberi lencana
+                <strong>"Sponsored / Featured"</strong> dan diletakkan paling
+                atas saat pengguna mencari makanan di <em>Explore Food</em>.
+              </p>
+              <div class="price-box">
+                <span>Biaya Promosi:</span>
+                <strong>Rp 150.000 / minggu</strong>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="primary-button"
+              id="activate-promo-btn"
+              onclick="togglePaidPromotion()"
+            >
+              Aktifkan Paid Promotion
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal Tambah/Edit Menu (CRUD) -->
+    <div id="menu-modal" class="modal hidden">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <div class="modal-header">
+          <h2 id="modal-menu-title">Tambah Menu Baru</h2>
+          <button class="close-btn" type="button" onclick="closeMenuModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="menu-form">
+            <input type="hidden" id="edit-menu-index" />
+            <div class="input-group" style="margin-bottom: 14px">
+              <label>Nama Makanan / Minuman</label>
+              <input
+                type="text"
+                id="input-nama-makanan"
+                class="search-input"
+                style="width: 100%; margin-top: 6px"
+                required
+              />
+            </div>
+            <div class="input-group" style="margin-bottom: 14px">
+              <label>Kategori Jenis</label>
+              <select
+                id="input-jenis"
+                class="category-select"
+                style="width: 100%; margin-top: 6px"
+              >
+                <option value="Makanan">Makanan</option>
+                <option value="Camilan">Camilan</option>
+                <option value="Minuman">Minuman</option>
+              </select>
+            </div>
+            <div class="input-group" style="margin-bottom: 20px">
+              <label>Harga (Rp)</label>
+              <input
+                type="number"
+                id="input-harga"
+                class="search-input"
+                style="width: 100%; margin-top: 6px"
+                required
+                min="500"
+              />
+            </div>
+            <button type="submit" class="primary-button" style="width: 100%">
+              Simpan Menu
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script Logika Seller Dashboard -->
+    <script>
+      // Tab Navigation Handler yang aman
+      function switchTab(event, sectionId) {
+        event.preventDefault();
+        document.querySelectorAll(".seller-section").forEach((el) => {
+          el.classList.remove("active");
+          el.classList.add("hidden");
+        });
+        document
+          .querySelectorAll(".sidebar-nav .nav-link")
+          .forEach((el) => el.classList.remove("active"));
+
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+          targetSection.classList.remove("hidden");
+          targetSection.classList.add("active");
+        }
+        event.currentTarget.classList.add("active");
+      }
+
+      // Data Mock / LocalStorage Seller
+      let sellerStoreName =
+        localStorage.getItem("seller_store_name") || "Family Kantin";
+      let sellerMenu = JSON.parse(localStorage.getItem("seller_menu")) || [
+        { nama_makanan: "Soto Ayam", jenis: "Makanan", harga: 12000 },
+        { nama_makanan: "Ayam Bakar", jenis: "Makanan", harga: 20000 },
+        { nama_makanan: "Es Teh Family", jenis: "Minuman", harga: 5000 },
+      ];
+      let isPromoActive =
+        JSON.parse(localStorage.getItem("seller_promo")) || false;
+
+      // Inisialisasi Tampilan Awal
+      window.addEventListener("DOMContentLoaded", () => {
+        const welcomeStoreEl = document.getElementById("welcome-store-name");
+        if (welcomeStoreEl)
+          welcomeStoreEl.textContent = `Halo, ${sellerStoreName}!`;
+
+        updateOverviewStats();
+        renderMenuTable();
+      });
+
+      // Render Tabel Menu
+      function renderMenuTable() {
+        const tbody = document.getElementById("menu-table-body");
+        if (!tbody) return;
+        tbody.innerHTML = "";
+
+        if (sellerMenu.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #849389;">Belum ada menu yang ditambahkan.</td></tr>`;
+          updateOverviewStats();
+          return;
+        }
+
+        sellerMenu.forEach((item, index) => {
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+                    <td><strong>${item.nama_makanan}</strong></td>
+                    <td><span class="badge">${item.jenis}</span></td>
+                    <td>Rp ${item.harga.toLocaleString("id-ID")}</td>
+                    <td>
+                        <button type="button" class="action-btn edit" onclick="openMenuModalForEdit(${index})">Edit</button>
+                        <button type="button" class="action-btn delete" onclick="deleteMenu(${index})">Hapus</button>
+                    </td>
+                `;
+          tbody.appendChild(tr);
+        });
+        updateOverviewStats();
+      }
+
+      function updateOverviewStats() {
+        const statTotalMenu = document.getElementById("stat-total-menu");
+        if (statTotalMenu) statTotalMenu.textContent = sellerMenu.length;
+
+        const promoStatusEl = document.getElementById("stat-promo-status");
+        const promoBtn = document.getElementById("activate-promo-btn");
+
+        if (isPromoActive) {
+          if (promoStatusEl) {
+            promoStatusEl.textContent = "Aktif (Sponsored)";
+            promoStatusEl.style.color = "#477c59";
+          }
+          if (promoBtn) {
+            promoBtn.textContent = "Non-Aktifkan Promosi";
+            promoBtn.style.backgroundColor = "#ef4444";
+          }
+        } else {
+          if (promoStatusEl) {
+            promoStatusEl.textContent = "Non-Aktif";
+            promoStatusEl.style.color = "#849389";
+          }
+          if (promoBtn) {
+            promoBtn.textContent = "Aktifkan Paid Promotion";
+            promoBtn.style.backgroundColor = "";
+          }
+        }
+      }
+
+      // Modal Handler Menu CRUD
+      const menuModal = document.getElementById("menu-modal");
+      const modalMenuTitle = document.getElementById("modal-menu-title");
+      const editMenuIndexInput = document.getElementById("edit-menu-index");
+      const inputNamaMakanan = document.getElementById("input-nama-makanan");
+      const inputJenis = document.getElementById("input-jenis");
+      const inputHarga = document.getElementById("input-harga");
+
+      function openMenuModalForAdd() {
+        if (!menuModal) return;
+
+        modalMenuTitle.textContent = "Tambah Menu Baru";
+        editMenuIndexInput.value = "";
+        inputNamaMakanan.value = "";
+        inputJenis.value = "Makanan";
+        inputHarga.value = "";
+
+        menuModal.classList.remove("hidden");
+      }
+
+      function openMenuModalForEdit(index) {
+        if (!menuModal || !sellerMenu[index]) return;
+
+        modalMenuTitle.textContent = "Edit Menu Makanan";
+        editMenuIndexInput.value = index;
+        inputNamaMakanan.value = sellerMenu[index].nama_makanan;
+        inputJenis.value = sellerMenu[index].jenis;
+        inputHarga.value = sellerMenu[index].harga;
+
+        menuModal.classList.remove("hidden");
+      }
+
+      function closeMenuModal() {
+        if (menuModal) menuModal.classList.add("hidden");
+      }
+
+      // Tutup modal jika klik di luar kotak modal
+      window.addEventListener("click", (e) => {
+        if (menuModal && e.target === menuModal) {
+          closeMenuModal();
+        }
+      });
+
+      // Form Submit Tambah/Edit Menu
+      const menuForm = document.getElementById("menu-form");
+      if (menuForm) {
+        menuForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const index = editMenuIndexInput.value;
+          const newItem = {
+            nama_toko: sellerStoreName,
+            nama_makanan: inputNamaMakanan.value.trim(),
+            jenis: inputJenis.value,
+            harga: Number(inputHarga.value),
+          };
+
+          if (index === "") {
+            sellerMenu.push(newItem);
+          } else {
+            sellerMenu[index] = newItem;
+          }
+
+          localStorage.setItem("seller_menu", JSON.stringify(sellerMenu));
+          closeMenuModal();
+          renderMenuTable();
+        });
+      }
+
+      // Hapus Menu
+      function deleteMenu(index) {
+        if (confirm("Yakin ingin menghapus menu ini?")) {
+          sellerMenu.splice(index, 1);
+          localStorage.setItem("seller_menu", JSON.stringify(sellerMenu));
+          renderMenuTable();
+        }
+      }
+
+      // Paid Promotion Toggle (Fitur Premium)
+      function togglePaidPromotion() {
+        isPromoActive = !isPromoActive;
+        localStorage.setItem("seller_promo", JSON.stringify(isPromoActive));
+        updateOverviewStats();
+        alert(
+          isPromoActive
+            ? "Selamat! Paid Promotion berhasil diaktifkan untuk tokomu."
+            : "Paid Promotion dinonaktifkan.",
+        );
+      }
+    </script>
+  </body>
+</html>
