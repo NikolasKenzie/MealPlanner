@@ -40,16 +40,15 @@
             <span>Budget Tracker</span>
           </a>
 
-           <a href="bmi.html" class="nav-link" aria-current="page">
-                <img src="assets/images/calculator.svg" alt="" class="nav-icon">
-                <span>BMI Calculator</span>
-            </a>
+          <a href="bmi.html" class="nav-link" aria-current="page">
+            <img src="assets/images/calculator.svg" alt="" class="nav-icon" />
+            <span>BMI Calculator</span>
+          </a>
 
           <a href="profile.html" class="nav-link">
             <img src="assets/images/user-round.svg" alt="" class="nav-icon" />
             <span>My Profile</span>
           </a>
-
         </nav>
 
         <div class="sidebar-bottom">
@@ -99,20 +98,121 @@
                 />
               </div>
             </div>
-                <div class="planner-buttons">
-          <button type="submit" class="primary-button">
-              Generate Meal Plan
-          </button>
+            <div class="planner-buttons">
+              <button type="submit" class="primary-button">
+                Generate Meal Plan
+              </button>
 
-          <button type="button" id="reset-plan" class="reset-button">
-              Reset Plan
-          </button>
-             </div>
+              <button type="button" id="reset-plan" class="reset-button">
+                Reset Plan
+              </button>
+            </div>
           </form>
 
-          <div>
-            <p>Upgrade Premium version to unlock more features</p>
-            <button>Upgrade Version</button>
+          <!-- Banner Upgrade Premium -->
+          <div class="ai-health-banner">
+            <div class="banner-content">
+              <div class="banner-icon">
+                <img
+                  src="assets/images/aiAssistanceIcon.jpg"
+                  alt="Premium Icon"
+                  style="width: 24px; height: 24px"
+                />
+              </div>
+              <div>
+                <h3>AroundBite Premium</h3>
+                <p>
+                  Unlock all smart features, AI-powered meal combinations, and a
+                  comprehensive nutrition calculator for a healthier life.
+                </p>
+              </div>
+            </div>
+            <button
+              type="button"
+              id="open-premium-modal-btn"
+              class="primary-button"
+            >
+              Upgrade Now
+            </button>
+          </div>
+
+          <!-- Modal Pop-up Daftar Fitur Premium -->
+          <div id="premium-modal" class="modal hidden">
+            <div class="modal-content modal-lg">
+              <div class="modal-header">
+                <div>
+                  <h2>AroundBite Premium Plan</h2>
+                  <p class="premium-price-tag">
+                    <strong>Rp 350.000 / Month</strong>
+                  </p>
+                </div>
+                <button class="close-btn" id="close-premium-modal">
+                  &times;
+                </button>
+              </div>
+              <div class="modal-body">
+                <p class="tab-desc">
+                  Enjoy unlimited access to all exclusive features for
+                  monitoring your health and diet.
+                </p>
+
+                <!-- List Card Fitur Premium -->
+                <div class="premium-cards-grid">
+                  <div class="premium-feature-card">
+                    <h4>🤖 AI Meal Combination</h4>
+                    <p>
+                      An intelligent AI system that automatically curates a
+                      variety of daily menus based on your remaining calorie
+                      allowance and nutritional goals.
+                    </p>
+                  </div>
+                  <div class="premium-feature-card">
+                    <h4>📊 BMI, BMR & TDEE calculator</h4>
+                    <p>
+                      Accurately calculate your body's daily energy requirements
+                      to ensure your diet and food budget are on the right
+                      track.
+                    </p>
+                  </div>
+                  <div class="premium-feature-card">
+                    <h4>🩺 Health Monitoring</h4>
+                    <p>
+                      Monitor your daily calorie intake, hydration status, and
+                      weekly health reports in <b><em>real-time</em></b
+                      >.
+                    </p>
+                  </div>
+                  <div class="premium-feature-card">
+                    <h4>⚡ Priority Support & Custom Budget</h4>
+                    <p>
+                      Priority access to the new canteen synchronization feature
+                      and unlimited budget limit customization.
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  class="primary-button"
+                  style="width: 100%; margin-top: 24px"
+                  onclick="
+                    alert('Terima kasih! Mengarahkan ke halaman pembayaran...')
+                  "
+                >
+                  Get a Premium Subscription Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Modal Pop-up AI & Health Features -->
+          <div id="ai-health-modal" class="modal hidden">
+            <div class="modal-content modal-lg">
+              <div class="modal-header">
+                <h2>AroundBite AI & Health Hub</h2>
+                <button class="close-btn" id="close-ai-modal">&times;</button>
+              </div>
+              <div class="modal-body"></div>
+            </div>
           </div>
         </div>
 
@@ -277,6 +377,7 @@
         weeklyPlanData = [];
 
         daysOfWeek.forEach((day) => {
+          // Menu utama wajib ada agar tidak kelaparan
           const breakfast = getRandomItem(
             makananList.length ? makananList : menuData,
           );
@@ -286,18 +387,29 @@
           const dinner = getRandomItem(
             makananList.length ? makananList : menuData,
           );
-          const drinkOrSnack = getRandomItem([
-            ...minumanList,
-            ...camilanList,
-            ...makananList,
-          ]);
 
           const dailyItems = [
             { time: "Breakfast", ...breakfast },
             { time: "Lunch", ...lunch },
-            { time: "Snack", ...drinkOrSnack },
             { time: "Dinner", ...dinner },
           ];
+
+          // Cek estimasi sementara untuk 3 menu utama hari ini (dibagi rata 7 hari dari maxBudget)
+          const dailyBudgetLimit = maxBudget / 7;
+          const currentMainMealCost =
+            breakfast.harga + lunch.harga + dinner.harga;
+
+          // Snack/Drink hanya ditambahkan jika budget harian masih longgar
+          // atau setidaknya sisa budget muat untuk beli selingan murah
+          const poolSelingan = [...minumanList, ...camilanList];
+          if (
+            poolSelingan.length > 0 &&
+            currentMainMealCost < dailyBudgetLimit
+          ) {
+            const drinkOrSnack = getRandomItem(poolSelingan);
+            // Masukkan snack ke urutan ke-3 (setelah lunch, sebelum dinner)
+            dailyItems.splice(2, 0, { time: "Snack", ...drinkOrSnack });
+          }
 
           weeklyPlanData.push({ day, items: dailyItems });
         });
@@ -391,31 +503,47 @@
         renderMealPlan(currentBudget);
       };
 
-      
-resetPlanButton.addEventListener("click", function () {
-    const confirmReset = confirm(
-        "Are you sure you want to reset your weekly meal plan?"
-    );
+      resetPlanButton.addEventListener("click", function () {
+        const confirmReset = confirm(
+          "Are you sure you want to reset your weekly meal plan?",
+        );
 
-    if (!confirmReset) return;
+        if (!confirmReset) return;
 
-    localStorage.removeItem("aroundbite_weekly_budget");
-    localStorage.removeItem("aroundbite_meal_plan");
+        localStorage.removeItem("aroundbite_weekly_budget");
+        localStorage.removeItem("aroundbite_meal_plan");
 
-    weeklyBudgetInput.value = "";
-    weeklyPlanData = [];
-    daysContainer.innerHTML = "";
+        weeklyBudgetInput.value = "";
+        weeklyPlanData = [];
+        daysContainer.innerHTML = "";
 
-    plannerResults.classList.add("hidden");
-    totalCostDisplay.textContent = formatRupiah(0);
+        plannerResults.classList.add("hidden");
+        totalCostDisplay.textContent = formatRupiah(0);
 
-    budgetStatusText.textContent =
-        "Here are some varied menu recommendations for you.";
-    budgetStatusText.style.color = "";
+        budgetStatusText.textContent =
+          "Here are some varied menu recommendations for you.";
+        budgetStatusText.style.color = "";
 
-    alert("Your meal plan has been reset!");
-});
+        alert("Your meal plan has been reset!");
+      });
 
+      // Elemen Modal AI & Health Hub
+      // Elemen Modal Premium
+      const premiumModal = document.getElementById("premium-modal");
+      const openPremiumModalBtn = document.getElementById(
+        "open-premium-modal-btn",
+      );
+      const closePremiumModalBtn = document.getElementById(
+        "close-premium-modal",
+      );
+
+      openPremiumModalBtn.onclick = () =>
+        premiumModal.classList.remove("hidden");
+      closePremiumModalBtn.onclick = () => premiumModal.classList.add("hidden");
+
+      window.addEventListener("click", (e) => {
+        if (e.target === premiumModal) premiumModal.classList.add("hidden");
+      });
     </script>
   </body>
 </html>

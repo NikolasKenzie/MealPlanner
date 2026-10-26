@@ -1,211 +1,232 @@
-<!--  --><!DOCTYPE html>
+<!--  --><!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AroundBite - Explore Food</title>
-    <link rel="stylesheet" href="styles/dashboard.css">
-    <link rel="stylesheet" href="styles/exploreFood.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="styles/dashboard.css" />
+    <link rel="stylesheet" href="styles/exploreFood.css" />
+  </head>
+  <body>
     <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a href="index.html" class="logo">AroundBite<span>.</span></a>
 
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <a href="index.html" class="logo">AroundBite<span>.</span></a>
+        <p class="menu-title">MENU</p>
 
-            <p class="menu-title">MENU</p>
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="nav-link">
+            <img src="assets/images/house.svg" alt="" class="nav-icon" />
+            <span>Dashboard</span>
+          </a>
 
-            <nav class="sidebar-nav">
-                <a href="dashboard.html" class="nav-link">
-                    <img src="assets/images/house.svg" alt="" class="nav-icon">
-                    <span>Dashboard</span>
-                </a>
+          <a href="mealPlanner.html" class="nav-link">
+            <img
+              src="assets/images/calendar-days.svg"
+              alt=""
+              class="nav-icon"
+            />
+            <span>Meal Planner</span>
+          </a>
 
-                <a href="mealPlanner.html" class="nav-link">
-                    <img src="assets/images/calendar-days.svg" alt="" class="nav-icon">
-                    <span>Meal Planner</span>
-                </a>
+          <a href="exploreFood.html" class="nav-link active">
+            <img src="assets/images/utensils.svg" alt="" class="nav-icon" />
+            <span>Explore Food</span>
+          </a>
 
-                <a href="exploreFood.html" class="nav-link active">
-                    <img src="assets/images/utensils.svg" alt="" class="nav-icon">
-                    <span>Explore Food</span>
-                </a>
+          <a href="budget.html" class="nav-link">
+            <img src="assets/images/wallet.svg" alt="" class="nav-icon" />
+            <span>Budget Tracker</span>
+          </a>
 
-                <a href="budget.html" class="nav-link">
-                    <img src="assets/images/wallet.svg" alt="" class="nav-icon">
-                    <span>Budget Tracker</span>
-                </a>
+          <a href="bmi.html" class="nav-link" aria-current="page">
+            <img src="assets/images/calculator.svg" alt="" class="nav-icon" />
+            <span>BMI Calculator</span>
+          </a>
 
-                 <a href="bmi.html" class="nav-link "aria-current="page">
-                <img src="assets/images/calculator.svg" alt="" class="nav-icon">
-                <span>BMI Calculator</span>
-            </a>
+          <a href="profile.html" class="nav-link">
+            <img src="assets/images/user-round.svg" alt="" class="nav-icon" />
+            <span>My Profile</span>
+          </a>
+        </nav>
 
-                <a href="profile.html" class="nav-link">
-                    <img src="assets/images/user-round.svg" alt="" class="nav-icon">
-                    <span>My Profile</span>
-                </a>
-            
-            </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-note">
+            <p class="note-title">A little reminder</p>
+            <p>Eat well, live well.</p>
+          </div>
 
-            <div class="sidebar-bottom">
-                <div class="sidebar-note">
-                    <p class="note-title">A little reminder</p>
-                    <p>Eat well, live well.</p>
-                </div>
+          <a href="index.html" class="back-link">
+            <img src="assets/images/undo-2.svg" alt="" class="nav-icon" />
+            <span>Back to Home</span>
+          </a>
+        </div>
+      </aside>
 
-                <a href="index.html" class="back-link">
-                    <img src="assets/images/undo-2.svg" alt="" class="nav-icon">
-                    <span>Back to Home</span>
-                </a>
-            </div>
-        </aside>
+      <!-- Main Content -->
+      <main class="main-content">
+        <div class="welcome">
+          <div class="welcome-text">
+            <p class="eyebrow">EXPLORE FOOD</p>
+            <h1>Temukan Kantin & Resto Favoritmu</h1>
+            <p>
+              Jelajahi berbagai pilihan menu makanan, minuman, dan cemilan
+              menarik di sekitar kamu.
+            </p>
+          </div>
+        </div>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            
-            <div class="welcome">
-                <div class="welcome-text">
-                    <p class="eyebrow">EXPLORE FOOD</p>
-                    <h1>Temukan Kantin & Resto Favoritmu</h1>
-                    <p>Jelajahi berbagai pilihan menu makanan, minuman, dan cemilan menarik di sekitar kamu.</p>
-                </div>
-            </div>
+        <!-- Search & Filter Bar -->
+        <div class="filter-bar">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Cari nama toko atau makanan..."
+            class="search-input"
+          />
+          <select id="category-select" class="category-select">
+            <option value="All">Semua Kategori</option>
+            <option value="Makanan">Makanan</option>
+            <option value="Camilan">Camilan</option>
+            <option value="Minuman">Minuman</option>
+          </select>
+        </div>
 
-            <!-- Search & Filter Bar -->
-            <div class="filter-bar">
-                <input type="text" id="search-input" placeholder="Cari nama toko atau makanan..." class="search-input">
-                <select id="category-select" class="category-select">
-                    <option value="All">Semua Kategori</option>
-                    <option value="Makanan">Makanan</option>
-                    <option value="Camilan">Camilan</option>
-                    <option value="Minuman">Minuman</option>
-                </select>
-            </div>
-
-            <!-- Food Grid Container -->
-            <div class="food-grid" id="food-grid">
-                <!-- Card Toko akan dimuat di sini -->
-            </div>
-
-        </main>
-
+        <!-- Food Grid Container -->
+        <div class="food-grid" id="food-grid">
+          <!-- Card Toko akan dimuat di sini -->
+        </div>
+      </main>
     </div>
 
     <!-- Modal Popup Detail Menu -->
     <div id="menu-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <h2 id="modal-toko-name">Nama Toko</h2>
-                    <span id="modal-toko-badge" class="badge">Kategori</span>
-                </div>
-                <button class="close-btn" id="close-modal">&times;</button>
-            </div>
-            <div class="modal-body">
-                <h3>Daftar Menu Lengkap</h3>
-                <ul class="modal-menu-list" id="modal-menu-list">
-                    <!-- Item menu akan dirender di sini -->
-                </ul>
-            </div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 id="modal-toko-name">Nama Toko</h2>
+            <span id="modal-toko-badge" class="badge">Kategori</span>
+          </div>
+          <button class="close-btn" id="close-modal">&times;</button>
         </div>
+        <div class="modal-body">
+          <h3>Daftar Menu Lengkap</h3>
+          <ul class="modal-menu-list" id="modal-menu-list">
+            <!-- Item menu akan dirender di sini -->
+          </ul>
+        </div>
+      </div>
     </div>
 
     <script>
-        let groupedStores = [];
+      let groupedStores = [];
 
-        // Gambar preset per toko
-        const storeImages = {
-            "Family Kantin": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
-            "A LIMA": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80"
-        };
-        const defaultImage = "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80";
+      // Gambar preset per toko
+      const storeImages = {
+        "Family Kantin":
+          "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80",
+        "A LIMA":
+          "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=600&q=80",
+      };
+      const defaultImage =
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80";
 
-        const foodGrid = document.getElementById("food-grid");
-        const searchInput = document.getElementById("search-input");
-        const categorySelect = document.getElementById("category-select");
+      const foodGrid = document.getElementById("food-grid");
+      const searchInput = document.getElementById("search-input");
+      const categorySelect = document.getElementById("category-select");
 
-        const modal = document.getElementById("menu-modal");
-        const closeModal = document.getElementById("close-modal");
-        const modalTokoName = document.getElementById("modal-toko-name");
-        const modalTokoBadge = document.getElementById("modal-toko-badge");
-        const modalMenuList = document.getElementById("modal-menu-list");
+      const modal = document.getElementById("menu-modal");
+      const closeModal = document.getElementById("close-modal");
+      const modalTokoName = document.getElementById("modal-toko-name");
+      const modalTokoBadge = document.getElementById("modal-toko-badge");
+      const modalMenuList = document.getElementById("modal-menu-list");
 
-        // Format angka ke Rupiah
-        function formatRupiah(number) {
-            return new Intl.NumberFormat("id-ID", { style: "currency", currency: "IDR", maximumFractionDigits: 0 }).format(number);
+      // Format angka ke Rupiah
+      function formatRupiah(number) {
+        return new Intl.NumberFormat("id-ID", {
+          style: "currency",
+          currency: "IDR",
+          maximumFractionDigits: 0,
+        }).format(number);
+      }
+
+      // Mengelompokkan data berdasarkan Toko
+      function groupDataByStore(data) {
+        const stores = {};
+        data.forEach((item) => {
+          if (!stores[item.nama_toko]) {
+            stores[item.nama_toko] = {
+              nama_toko: item.nama_toko,
+              items: [],
+              kategoriSet: new Set(),
+            };
+          }
+          stores[item.nama_toko].items.push(item);
+          stores[item.nama_toko].kategoriSet.add(item.jenis);
+        });
+        return Object.values(stores);
+      }
+
+      // Fungsi Fetch Data dari menu_kantin.json
+      async function loadMenuData() {
+        try {
+          const response = await fetch("assets/db/menu_kantin.json");
+          if (!response.ok) {
+            throw new Error("Gagal memuat file menu_kantin.json");
+          }
+          const rawData = await response.json();
+
+          groupedStores = groupDataByStore(rawData);
+          renderStoreCards(); // Render card setelah data berhasil diambil
+        } catch (error) {
+          console.error("Terjadi kesalahan:", error);
+          foodGrid.innerHTML = `<p class="no-data">Gagal memuat data menu. Pastikan server lokal aktif.</p>`;
+        }
+      }
+
+      // Render Card Toko
+      function renderStoreCards(filterText = "", filterCategory = "All") {
+        foodGrid.innerHTML = "";
+
+        const filteredStores = groupedStores.filter((store) => {
+          const categories = Array.from(store.kategoriSet);
+          const matchesCategory =
+            filterCategory === "All" || categories.includes(filterCategory);
+
+          const matchesSearch =
+            store.nama_toko.toLowerCase().includes(filterText.toLowerCase()) ||
+            store.items.some((i) =>
+              i.nama_makanan.toLowerCase().includes(filterText.toLowerCase()),
+            );
+
+          return matchesCategory && matchesSearch;
+        });
+
+        if (filteredStores.length === 0) {
+          foodGrid.innerHTML = `<p class="no-data">Tidak ada tempat makan yang cocok dengan pencarian Anda.</p>`;
+          return;
         }
 
-        // Mengelompokkan data berdasarkan Toko
-        function groupDataByStore(data) {
-            const stores = {};
-            data.forEach(item => {
-                if (!stores[item.nama_toko]) {
-                    stores[item.nama_toko] = {
-                        nama_toko: item.nama_toko,
-                        items: [],
-                        kategoriSet: new Set()
-                    };
-                }
-                stores[item.nama_toko].items.push(item);
-                stores[item.nama_toko].kategoriSet.add(item.jenis);
-            });
-            return Object.values(stores);
-        }
+        filteredStores.forEach((store) => {
+          const categoriesArr = Array.from(store.kategoriSet);
+          const minPrice = Math.min(...store.items.map((i) => i.harga));
+          const maxPrice = Math.max(...store.items.map((i) => i.harga));
 
-        // Fungsi Fetch Data dari menu_kantin.json
-        async function loadMenuData() {
-            try {
-                const response = await fetch('assets/db/menu_kantin.json');
-                if (!response.ok) {
-                    throw new Error('Gagal memuat file menu_kantin.json');
-                }
-                const rawData = await response.json();
-                
-                groupedStores = groupDataByStore(rawData);
-                renderStoreCards(); // Render card setelah data berhasil diambil
-            } catch (error) {
-                console.error('Terjadi kesalahan:', error);
-                foodGrid.innerHTML = `<p class="no-data">Gagal memuat data menu. Pastikan server lokal aktif.</p>`;
-            }
-        }
+          const priceRange =
+            minPrice === maxPrice
+              ? formatRupiah(minPrice)
+              : `${formatRupiah(minPrice)} - ${formatRupiah(maxPrice)}`;
 
-        // Render Card Toko
-        function renderStoreCards(filterText = "", filterCategory = "All") {
-            foodGrid.innerHTML = "";
+          const sampleMenu = store.items
+            .slice(0, 3)
+            .map((i) => i.nama_makanan)
+            .join(", ");
+          const imgUrl = storeImages[store.nama_toko] || defaultImage;
 
-            const filteredStores = groupedStores.filter(store => {
-                const categories = Array.from(store.kategoriSet);
-                const matchesCategory = filterCategory === "All" || categories.includes(filterCategory);
-
-                const matchesSearch = store.nama_toko.toLowerCase().includes(filterText.toLowerCase()) ||
-                    store.items.some(i => i.nama_makanan.toLowerCase().includes(filterText.toLowerCase()));
-
-                return matchesCategory && matchesSearch;
-            });
-
-            if (filteredStores.length === 0) {
-                foodGrid.innerHTML = `<p class="no-data">Tidak ada tempat makan yang cocok dengan pencarian Anda.</p>`;
-                return;
-            }
-
-            filteredStores.forEach(store => {
-                const categoriesArr = Array.from(store.kategoriSet);
-                const minPrice = Math.min(...store.items.map(i => i.harga));
-                const maxPrice = Math.max(...store.items.map(i => i.harga));
-                
-                const priceRange = minPrice === maxPrice 
-                    ? formatRupiah(minPrice) 
-                    : `${formatRupiah(minPrice)} - ${formatRupiah(maxPrice)}`;
-
-                const sampleMenu = store.items.slice(0, 3).map(i => i.nama_makanan).join(", ");
-                const imgUrl = storeImages[store.nama_toko] || defaultImage;
-
-                const card = document.createElement("div");
-                card.className = "food-card-item";
-                card.innerHTML = `
+          const card = document.createElement("div");
+          card.className = "food-card-item";
+          card.innerHTML = `
                     <div class="card-image-wrapper">
                         <img src="${imgUrl}" alt="${store.nama_toko}" class="card-img">
                     </div>
@@ -216,47 +237,51 @@
                         <button class="primary-button card-btn" onclick="openMenuModal('${store.nama_toko}')">Detail Menu</button>
                     </div>
                 `;
-                foodGrid.appendChild(card);
-            });
-        }
+          foodGrid.appendChild(card);
+        });
+      }
 
-        // Buka Modal Pop-up
-        window.openMenuModal = function(storeName) {
-            const store = groupedStores.find(s => s.nama_toko === storeName);
-            if (!store) return;
+      // Buka Modal Pop-up
+      window.openMenuModal = function (storeName) {
+        const store = groupedStores.find((s) => s.nama_toko === storeName);
+        if (!store) return;
 
-            modalTokoName.textContent = store.nama_toko;
-            modalTokoBadge.textContent = Array.from(store.kategoriSet).join(" • ");
-            modalMenuList.innerHTML = "";
+        modalTokoName.textContent = store.nama_toko;
+        modalTokoBadge.textContent = Array.from(store.kategoriSet).join(" • ");
+        modalMenuList.innerHTML = "";
 
-            store.items.forEach(item => {
-                const li = document.createElement("li");
-                li.className = "modal-menu-item";
-                li.innerHTML = `
+        store.items.forEach((item) => {
+          const li = document.createElement("li");
+          li.className = "modal-menu-item";
+          li.innerHTML = `
                     <div class="menu-info">
                         <span class="menu-name">${item.nama_makanan}</span>
                         <span class="menu-type">${item.jenis}</span>
                     </div>
-                    <span class="menu-price">${formatRupiah(item.harga)}${item.satuan ? ` / ${item.satuan}` : ''}</span>
+                    <span class="menu-price">${formatRupiah(item.harga)}${item.satuan ? ` / ${item.satuan}` : ""}</span>
                 `;
-                modalMenuList.appendChild(li);
-            });
+          modalMenuList.appendChild(li);
+        });
 
-            modal.style.display = "flex";
-        };
+        modal.style.display = "flex";
+      };
 
-        // Tutup Modal
-        closeModal.onclick = () => modal.style.display = "none";
-        window.onclick = (e) => {
-            if (e.target === modal) modal.style.display = "none";
-        };
+      // Tutup Modal
+      closeModal.onclick = () => (modal.style.display = "none");
+      window.onclick = (e) => {
+        if (e.target === modal) modal.style.display = "none";
+      };
 
-        // Filter Event Listener
-        searchInput.addEventListener("input", () => renderStoreCards(searchInput.value, categorySelect.value));
-        categorySelect.addEventListener("change", () => renderStoreCards(searchInput.value, categorySelect.value));
+      // Filter Event Listener
+      searchInput.addEventListener("input", () =>
+        renderStoreCards(searchInput.value, categorySelect.value),
+      );
+      categorySelect.addEventListener("change", () =>
+        renderStoreCards(searchInput.value, categorySelect.value),
+      );
 
-        // Panggil fungsi utama saat halaman dimuat
-        loadMenuData();
+      // Panggil fungsi utama saat halaman dimuat
+      loadMenuData();
     </script>
-</body>
+  </body>
 </html>
