@@ -31,9 +31,6 @@ button {
     cursor: pointer;
 }
 
-/* =========================
-   DASHBOARD LAYOUT
-========================= */
 
 .dashboard {
     display: flex;
@@ -55,10 +52,11 @@ button {
 }
 
 .logo {
-    font-size: 25px;
+    color: #059669;
+    font-size: 28px;
     font-weight: bold;
-    color: #064e3b;
-    margin-bottom: 40px;
+    letter-spacing: -1px;
+    margin-bottom: 42px;
 }
 
 .logo span {
@@ -510,9 +508,7 @@ footer {
     font-size: 12px;
 }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+
 
 @media (max-width: 1100px) {
     .main-content {
